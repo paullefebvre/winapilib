@@ -1,0 +1,5 @@
+  Declare Function FlashWindow Lib "user32" Alias "FlashWindow" ( hwnd As Integer, bInvert As Boolean ) As Boolean
+  //Create a boolean variable
+  Dim IsSuccessful as Boolean
+  //Call the function
+  IsSuccessful = FlashWindow(Windows1.Handle, True)
