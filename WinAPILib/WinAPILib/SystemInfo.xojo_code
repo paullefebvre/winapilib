@@ -160,10 +160,12 @@ Protected Class SystemInfo
 
 
 	#tag Structure, Name = SYSTEM_INFO, Flags = &h0
-		dwPageSize As UInt32
+		wProcessorArchitecture As UInt16
+		  wReserved As UInt16
+		  dwPageSize As UInt32
 		  lpMinimumApplicationAddress As Ptr
 		  lpMaximumApplicationAddress As Ptr
-		  dwActiveProcessorMask As UInt64
+		  dwActiveProcessorMask As UInteger
 		  dwNumberOfProcessors As UInt32
 		  dwProcessorType As UInt32
 		  dwAllocationGranularity As UInt32
