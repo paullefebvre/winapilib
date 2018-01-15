@@ -107,6 +107,7 @@ Begin Window MainWindow
       Selectable      =   False
       TabIndex        =   4
       TabPanelIndex   =   0
+      TabStop         =   True
       Text            =   "Opacity"
       TextAlign       =   0
       TextColor       =   &c00000000
@@ -141,6 +142,7 @@ Begin Window MainWindow
       Selectable      =   False
       TabIndex        =   5
       TabPanelIndex   =   0
+      TabStop         =   True
       Text            =   "CPUUsage"
       TextAlign       =   0
       TextColor       =   &c00000000
@@ -313,6 +315,37 @@ Begin Window MainWindow
       Visible         =   True
       Width           =   107
    End
+   Begin PushButton LaunchAndWaitButton
+      AutoDeactivate  =   True
+      Bold            =   False
+      ButtonStyle     =   "0"
+      Cancel          =   False
+      Caption         =   "Launch and Wait Notepad"
+      Default         =   False
+      Enabled         =   True
+      Height          =   22
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   412
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      Scope           =   0
+      TabIndex        =   11
+      TabPanelIndex   =   0
+      TabStop         =   True
+      TextFont        =   "System"
+      TextSize        =   0.0
+      TextUnit        =   0
+      Top             =   85
+      Underline       =   False
+      Visible         =   True
+      Width           =   168
+   End
 End
 #tag EndWindow
 
@@ -392,6 +425,17 @@ End
 		Sub Action()
 		  Dim w As New OSVersionInfoWindow
 		  w.Show
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events LaunchAndWaitButton
+	#tag Event
+		Sub Action()
+		  Dim notepad As FolderItem = SpecialFolder.Windows.Child("Notepad.exe")
+		  If notepad.Exists Then
+		    WinAPILib.FileIO.LaunchAndWait(notepad)
+		    MsgBox("Notepad closed.")
+		  End If
 		End Sub
 	#tag EndEvent
 #tag EndEvents
