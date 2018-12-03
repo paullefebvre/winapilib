@@ -35,6 +35,40 @@ Protected Class OSVersionInfo
 		      End If
 		    End If
 		    
+		    // The following submitted by Jurg Otter
+		    #If Target32Bit And XojoVersion < 2019.01 Then
+		      mMajorVersion = m.Int32Value(4)
+		      mMinorVersion = m.Int32Value(8)
+		      
+		      If (mMajorVersion = 6) And (mMinorVersion = 2) Then
+		        // We got Windows 8. However, because we don't have a ManiFest it might be Windows 10.
+		        // So let's see what we get here:
+		        // RtlGetVersion is the equivalent of the GetVersionEx function in the Windows SDK.
+		        // https://msdn.microsoft.com/en-us/library/dn481241(v=vs.85).aspx
+		        // https://docs.microsoft.com/en-us/windows/desktop/devnotes/rtlgetversion
+		        
+		        If System.IsFunctionAvailable("RtlGetVersion", "ntdll") Then
+		          Soft Declare Function RtlGetVersion Lib "ntdll" (lpVersionInformation As Ptr) As Integer
+		          
+		          bUsingUnicode = True
+		          Dim m2 As New MemoryBlock(284) // use this for osversioninfoex structure (2000+ only)
+		          m2.long(0) = m2.Size // must set size before calling getversionex
+		          ret = RtlGetVersion(m2) // if not 2000+, will return 0
+		          If ret = 0 Then
+		            // return 0 means: success
+		            
+		            mMajorVersion = m2.Int32Value(4)
+		            mMinorVersion = m2.Int32Value(8)
+		            If (mMajorVersion > 6) Then
+		              // right - it's not Windows 8 :-)
+		              // so get the info out of this MemoryBlock
+		              m = m2
+		            End If
+		          End If
+		        End If
+		      End If
+		    #EndIf
+		    
 		    mMajorVersion = m.Int32Value(4)
 		    mMinorVersion = m.Int32Value(8)
 		    mBuild = m.Int32Value(12)
@@ -191,19 +225,19 @@ Protected Class OSVersionInfo
 
 
 	#tag Property, Flags = &h21
-		Private mBuild As integer
+		Private mBuild As Integer
 	#tag EndProperty
 
 	#tag Property, Flags = &h21
-		Private mExtraInfo As string
+		Private mExtraInfo As String
 	#tag EndProperty
 
 	#tag Property, Flags = &h21
-		Private mMajorVersion As integer
+		Private mMajorVersion As Integer
 	#tag EndProperty
 
 	#tag Property, Flags = &h21
-		Private mMinorVersion As integer
+		Private mMinorVersion As Integer
 	#tag EndProperty
 
 	#tag Property, Flags = &h21
@@ -211,19 +245,19 @@ Protected Class OSVersionInfo
 	#tag EndProperty
 
 	#tag Property, Flags = &h21
-		Private mOSName As string
+		Private mOSName As String
 	#tag EndProperty
 
 	#tag Property, Flags = &h21
-		Private mOSSuites As string
+		Private mOSSuites As String
 	#tag EndProperty
 
 	#tag Property, Flags = &h21
-		Private mPlatformID As integer
+		Private mPlatformID As Integer
 	#tag EndProperty
 
 	#tag Property, Flags = &h21
-		Private mProductType As integer
+		Private mProductType As Integer
 	#tag EndProperty
 
 	#tag Property, Flags = &h21
@@ -235,15 +269,15 @@ Protected Class OSVersionInfo
 	#tag EndProperty
 
 	#tag Property, Flags = &h21
-		Private mSuiteMask As string
+		Private mSuiteMask As String
 	#tag EndProperty
 
 	#tag Property, Flags = &h21
-		Private mVersion As integer
+		Private mVersion As Integer
 	#tag EndProperty
 
 	#tag Property, Flags = &h21
-		Private mVersionString As string
+		Private mVersionString As String
 	#tag EndProperty
 
 

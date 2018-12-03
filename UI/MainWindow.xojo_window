@@ -53,6 +53,7 @@ Begin Window MainWindow
       TextSize        =   0.0
       TextUnit        =   0
       Top             =   19
+      Transparent     =   False
       Underline       =   False
       Visible         =   True
       Width           =   107
@@ -81,6 +82,7 @@ Begin Window MainWindow
       TabStop         =   True
       TickStyle       =   "0"
       Top             =   173
+      Transparent     =   False
       Value           =   100
       Visible         =   True
       Width           =   100
@@ -218,6 +220,7 @@ Begin Window MainWindow
       TextSize        =   0.0
       TextUnit        =   0
       Top             =   19
+      Transparent     =   False
       Underline       =   False
       Visible         =   True
       Width           =   114
@@ -249,6 +252,7 @@ Begin Window MainWindow
       TextSize        =   0.0
       TextUnit        =   0
       Top             =   51
+      Transparent     =   False
       Underline       =   False
       Visible         =   True
       Width           =   114
@@ -280,6 +284,7 @@ Begin Window MainWindow
       TextSize        =   0.0
       TextUnit        =   0
       Top             =   51
+      Transparent     =   False
       Underline       =   False
       Visible         =   True
       Width           =   107
@@ -311,6 +316,7 @@ Begin Window MainWindow
       TextSize        =   0.0
       TextUnit        =   0
       Top             =   85
+      Transparent     =   False
       Underline       =   False
       Visible         =   True
       Width           =   107
@@ -342,6 +348,7 @@ Begin Window MainWindow
       TextSize        =   0.0
       TextUnit        =   0
       Top             =   85
+      Transparent     =   False
       Underline       =   False
       Visible         =   True
       Width           =   168
