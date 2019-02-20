@@ -53,7 +53,6 @@ Begin Window MainWindow
       TextSize        =   0.0
       TextUnit        =   0
       Top             =   19
-      Transparent     =   False
       Underline       =   False
       Visible         =   True
       Width           =   107
@@ -82,7 +81,6 @@ Begin Window MainWindow
       TabStop         =   True
       TickStyle       =   "0"
       Top             =   173
-      Transparent     =   False
       Value           =   100
       Visible         =   True
       Width           =   100
@@ -109,7 +107,6 @@ Begin Window MainWindow
       Selectable      =   False
       TabIndex        =   4
       TabPanelIndex   =   0
-      TabStop         =   True
       Text            =   "Opacity"
       TextAlign       =   0
       TextColor       =   &c00000000
@@ -144,7 +141,6 @@ Begin Window MainWindow
       Selectable      =   False
       TabIndex        =   5
       TabPanelIndex   =   0
-      TabStop         =   True
       Text            =   "CPUUsage"
       TextAlign       =   0
       TextColor       =   &c00000000
@@ -220,7 +216,6 @@ Begin Window MainWindow
       TextSize        =   0.0
       TextUnit        =   0
       Top             =   19
-      Transparent     =   False
       Underline       =   False
       Visible         =   True
       Width           =   114
@@ -252,7 +247,6 @@ Begin Window MainWindow
       TextSize        =   0.0
       TextUnit        =   0
       Top             =   51
-      Transparent     =   False
       Underline       =   False
       Visible         =   True
       Width           =   114
@@ -284,7 +278,6 @@ Begin Window MainWindow
       TextSize        =   0.0
       TextUnit        =   0
       Top             =   51
-      Transparent     =   False
       Underline       =   False
       Visible         =   True
       Width           =   107
@@ -316,7 +309,6 @@ Begin Window MainWindow
       TextSize        =   0.0
       TextUnit        =   0
       Top             =   85
-      Transparent     =   False
       Underline       =   False
       Visible         =   True
       Width           =   107
@@ -348,10 +340,72 @@ Begin Window MainWindow
       TextSize        =   0.0
       TextUnit        =   0
       Top             =   85
-      Transparent     =   False
       Underline       =   False
       Visible         =   True
       Width           =   168
+   End
+   Begin PushButton SelectFolderButton
+      AutoDeactivate  =   True
+      Bold            =   False
+      ButtonStyle     =   "0"
+      Cancel          =   False
+      Caption         =   "Minimalistic Select Folder"
+      Default         =   False
+      Enabled         =   True
+      Height          =   22
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   412
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      Scope           =   0
+      TabIndex        =   12
+      TabPanelIndex   =   0
+      TabStop         =   True
+      TextFont        =   "System"
+      TextSize        =   0.0
+      TextUnit        =   0
+      Top             =   119
+      Underline       =   False
+      Visible         =   True
+      Width           =   168
+   End
+   Begin CheckBox LimitSelectFolderCheckBox
+      AutoDeactivate  =   True
+      Bold            =   False
+      Caption         =   "Limit to Favorites"
+      DataField       =   ""
+      DataSource      =   ""
+      Enabled         =   True
+      Height          =   20
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   412
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      Scope           =   0
+      State           =   0
+      TabIndex        =   13
+      TabPanelIndex   =   0
+      TabStop         =   True
+      TextFont        =   "System"
+      TextSize        =   0.0
+      TextUnit        =   0
+      Top             =   153
+      Underline       =   False
+      Value           =   False
+      Visible         =   True
+      Width           =   177
    End
 End
 #tag EndWindow
@@ -443,6 +497,20 @@ End
 		    WinAPILib.FileIO.LaunchAndWait(notepad)
 		    MsgBox("Notepad closed.")
 		  End If
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events SelectFolderButton
+	#tag Event
+		Sub Action()
+		  dim d as new WinAPILib.SelectFolderDialog
+		  d.PromptText="Find a folder"
+		  if LimitSelectFolderCheckBox.Value then
+		    d.InitialDirectory=WinAPILib.SelectFolderDialog.RootFolders.CSIDL_FAVORITES
+		  end if
+		  dim f as FolderItem=d.ShowModal
+		  
+		  if f<>nil then MsgBox f.NativePath
 		End Sub
 	#tag EndEvent
 #tag EndEvents
