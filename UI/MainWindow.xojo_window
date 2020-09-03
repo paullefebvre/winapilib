@@ -170,7 +170,7 @@ Begin Window MainWindow
       AutoDeactivate  =   True
       Backdrop        =   0
       DoubleBuffer    =   False
-      Enabled         =   True
+      Enabled         =   False
       Height          =   60
       HelpTag         =   ""
       Index           =   -2147483648
@@ -416,10 +416,288 @@ Begin Window MainWindow
       Visible         =   True
       Width           =   177
    End
+   Begin PushButton slideButton
+      AutoDeactivate  =   True
+      Bold            =   False
+      ButtonStyle     =   "0"
+      Cancel          =   False
+      Caption         =   "Slide"
+      Default         =   False
+      Enabled         =   True
+      Height          =   20
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   485
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      Scope           =   2
+      TabIndex        =   14
+      TabPanelIndex   =   0
+      TabStop         =   True
+      TextFont        =   "System"
+      TextSize        =   0.0
+      TextUnit        =   0
+      Top             =   281
+      Transparent     =   False
+      Underline       =   False
+      Visible         =   True
+      Width           =   95
+   End
+   Begin PushButton collapseButton
+      AutoDeactivate  =   True
+      Bold            =   False
+      ButtonStyle     =   "0"
+      Cancel          =   False
+      Caption         =   "Collapse"
+      Default         =   False
+      Enabled         =   True
+      Height          =   20
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   378
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      Scope           =   2
+      TabIndex        =   15
+      TabPanelIndex   =   0
+      TabStop         =   True
+      TextFont        =   "System"
+      TextSize        =   0.0
+      TextUnit        =   0
+      Top             =   313
+      Transparent     =   False
+      Underline       =   False
+      Visible         =   True
+      Width           =   95
+   End
+   Begin PushButton expandButton
+      AutoDeactivate  =   True
+      Bold            =   False
+      ButtonStyle     =   "0"
+      Cancel          =   False
+      Caption         =   "Expand"
+      Default         =   False
+      Enabled         =   True
+      Height          =   20
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   485
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      Scope           =   2
+      TabIndex        =   16
+      TabPanelIndex   =   0
+      TabStop         =   True
+      TextFont        =   "System"
+      TextSize        =   0.0
+      TextUnit        =   0
+      Top             =   313
+      Transparent     =   False
+      Underline       =   False
+      Visible         =   True
+      Width           =   95
+   End
+   Begin PushButton fadeButton
+      AutoDeactivate  =   True
+      Bold            =   False
+      ButtonStyle     =   "0"
+      Cancel          =   False
+      Caption         =   "Fade"
+      Default         =   False
+      Enabled         =   True
+      Height          =   20
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   378
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      Scope           =   2
+      TabIndex        =   17
+      TabPanelIndex   =   0
+      TabStop         =   True
+      TextFont        =   "System"
+      TextSize        =   0.0
+      TextUnit        =   0
+      Top             =   345
+      Transparent     =   False
+      Underline       =   False
+      Visible         =   True
+      Width           =   95
+   End
+   Begin PushButton rollButton
+      AutoDeactivate  =   True
+      Bold            =   False
+      ButtonStyle     =   "0"
+      Cancel          =   False
+      Caption         =   "Roll"
+      Default         =   False
+      Enabled         =   True
+      Height          =   20
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   378
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      Scope           =   2
+      TabIndex        =   18
+      TabPanelIndex   =   0
+      TabStop         =   True
+      TextFont        =   "System"
+      TextSize        =   0.0
+      TextUnit        =   0
+      Top             =   280
+      Transparent     =   False
+      Underline       =   False
+      Visible         =   True
+      Width           =   95
+   End
+   Begin Label AnimateWindowLabel
+      AutoDeactivate  =   True
+      Bold            =   False
+      DataField       =   ""
+      DataSource      =   ""
+      Enabled         =   True
+      Height          =   20
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   378
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      Multiline       =   False
+      Scope           =   0
+      Selectable      =   False
+      TabIndex        =   19
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Text            =   "AnimateWindow Examples"
+      TextAlign       =   2
+      TextColor       =   &c00000000
+      TextFont        =   "System"
+      TextSize        =   0.0
+      TextUnit        =   0
+      Top             =   222
+      Transparent     =   True
+      Underline       =   False
+      Visible         =   True
+      Width           =   202
+   End
+   Begin TextField animateSpeedTextfield
+      AcceptTabs      =   False
+      Alignment       =   "3"
+      AutoDeactivate  =   True
+      AutomaticallyCheckSpelling=   False
+      BackColor       =   &cFFFFFF00
+      Bold            =   False
+      Border          =   True
+      CueText         =   ""
+      DataField       =   ""
+      DataSource      =   ""
+      Enabled         =   True
+      Format          =   ""
+      Height          =   22
+      HelpTag         =   ""
+      Index           =   -2147483648
+      Italic          =   False
+      Left            =   378
+      LimitText       =   0
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      Mask            =   ""
+      Password        =   False
+      ReadOnly        =   False
+      Scope           =   0
+      TabIndex        =   20
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Text            =   "100"
+      TextColor       =   &c00000000
+      TextFont        =   "System"
+      TextSize        =   0.0
+      TextUnit        =   0
+      Top             =   247
+      Transparent     =   False
+      Underline       =   False
+      UseFocusRing    =   True
+      Visible         =   True
+      Width           =   49
+   End
+   Begin Label AnimateWindowSpeedLabel
+      AutoDeactivate  =   True
+      Bold            =   False
+      DataField       =   ""
+      DataSource      =   ""
+      Enabled         =   True
+      Height          =   20
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   439
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      Multiline       =   False
+      Scope           =   0
+      Selectable      =   False
+      TabIndex        =   21
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Text            =   "Speed (MS)"
+      TextAlign       =   0
+      TextColor       =   &c00000000
+      TextFont        =   "System"
+      TextSize        =   0.0
+      TextUnit        =   0
+      Top             =   248
+      Transparent     =   True
+      Underline       =   False
+      Visible         =   True
+      Width           =   141
+   End
 End
 #tag EndWindow
 
 #tag WindowCode
+	#tag Property, Flags = &h0
+		AnimationTestWindow As Animate_Window
+	#tag EndProperty
+
+
 #tag EndWindowCode
 
 #tag Events ScreenCaptureButton
@@ -521,6 +799,136 @@ End
 		  
 		  if f<>nil then MsgBox f.NativePath
 		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events slideButton
+	#tag Event
+		Sub Action()
+		  #If TargetWindows Then
+		    // SLIDE EXAMPLE
+		    AnimationTestWindow = New Animate_Window
+		    AnimationTestWindow.Title = "Slide Window Example"
+		    AnimationTestWindow.Show()
+		    
+		    Var animationTimeInt as Integer = animateSpeedTextfield.Text.ToDouble
+		    Var windowHandleInt as Integer = AnimationTestWindow.Handle
+		    Var activateWindowInt as Integer = WinAPILib.AnimateWindow.AW_ACTIVATE
+		    Var slideEffectInt as Integer = WinAPILib.AnimateWindow.AW_HOR_POSITIVE
+		    
+		    Var activateInt as Integer = WinAPILib.AnimateWindow.AnimateWindow(windowHandleInt, animationTimeInt, activateWindowInt)
+		    Var resultInt as Integer = WinAPILib.AnimateWindow.AnimateWindow(windowHandleInt, animationTimeInt, slideEffectInt)
+		  #endif
+		  
+		  
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events collapseButton
+	#tag Event
+		Sub Action()
+		  #If TargetWindows Then
+		    // COLLAPSE EXAMPLE
+		    AnimationTestWindow = New Animate_Window
+		    AnimationTestWindow.Title = "Collapse Window Example"
+		    AnimationTestWindow.Show()
+		    
+		    Var animationTimeInt as Integer = animateSpeedTextfield.Text.ToDouble
+		    Var windowHandleInt as Integer = AnimationTestWindow.Handle
+		    Var activateWindowInt as Integer = WinAPILib.AnimateWindow.AW_ACTIVATE
+		    Var collapseInt as Integer = WinAPILib.AnimateWindow.AW_HIDE
+		    
+		    Var activateInt as Integer = WinAPILib.AnimateWindow.AnimateWindow(windowHandleInt, animationTimeInt, activateWindowInt)
+		    Var resultInt as Integer = WinAPILib.AnimateWindow.AnimateWindow(windowHandleInt, animationTimeInt, collapseInt)
+		  #endif
+		  
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events expandButton
+	#tag Event
+		Sub Action()
+		  #If TargetWindows Then
+		    // EXPAND EXAMPLE
+		    AnimationTestWindow = New Animate_Window
+		    AnimationTestWindow.Title = "Expand Window Example"
+		    AnimationTestWindow.Show()
+		    
+		    Var animationTimeInt as Integer = animateSpeedTextfield.Text.ToDouble
+		    Var windowHandleInt as Integer = AnimationTestWindow.Handle
+		    Var activateWindowInt as Integer = WinAPILib.AnimateWindow.AW_ACTIVATE
+		    Var expandEffectInt as Integer = WinAPILib.AnimateWindow.AW_CENTER
+		    
+		    Var activateInt as Integer = WinAPILib.AnimateWindow.AnimateWindow(windowHandleInt, animationTimeInt, activateWindowInt)
+		    Var resultInt as Integer = WinAPILib.AnimateWindow.AnimateWindow(windowHandleInt, animationTimeInt, expandEffectInt)
+		  #endif
+		  
+		  
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events fadeButton
+	#tag Event
+		Sub Action()
+		  #If TargetWindows Then
+		    // FADE EXAMPLE
+		    AnimationTestWindow = New Animate_Window
+		    AnimationTestWindow.Title = "Fade Window Example"
+		    AnimationTestWindow.Show()
+		    
+		    Var animationTimeInt as Integer = animateSpeedTextfield.Text.ToDouble
+		    Var windowHandleInt as Integer = AnimationTestWindow.Handle
+		    Var activateWindowInt as Integer = WinAPILib.AnimateWindow.AW_ACTIVATE
+		    Var fadeEffectInt as Integer = WinAPILib.AnimateWindow.AW_BLEND
+		    
+		    Var activateInt as Integer = WinAPILib.AnimateWindow.AnimateWindow(windowHandleInt, animationTimeInt, activateWindowInt)
+		    Var resultInt as Integer = WinAPILib.AnimateWindow.AnimateWindow(windowHandleInt, animationTimeInt, fadeEffectInt)
+		  #endif
+		  
+		  
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events rollButton
+	#tag Event
+		Sub Action()
+		  #If TargetWindows Then
+		    // ROLL EXAMPLE
+		    AnimationTestWindow = New Animate_Window
+		    AnimationTestWindow.Title = "Roll Window Example"
+		    AnimationTestWindow.Show()
+		    
+		    Var animationTimeInt as Integer = animateSpeedTextfield.Text.ToDouble
+		    Var windowHandleInt as Integer = AnimationTestWindow.Handle
+		    Var activateWindowInt as Integer = WinAPILib.AnimateWindow.AW_ACTIVATE
+		    Var rollEffectInt as Integer = WinAPILib.AnimateWindow.AW_HOR_NEGATIVE
+		    
+		    Var activateInt as Integer = WinAPILib.AnimateWindow.AnimateWindow(windowHandleInt, animationTimeInt, activateWindowInt)
+		    Var resultInt as Integer = WinAPILib.AnimateWindow.AnimateWindow(windowHandleInt, animationTimeInt, rollEffectInt)
+		  #endif
+		  
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events animateSpeedTextfield
+	#tag Event
+		Function KeyDown(Key As String) As Boolean
+		  // ONLY ALLOW DIGITS
+		  Select Case Asc(Key)
+		  Case 8
+		    // ALLOW BACKSPACE
+		    
+		  Case 10, 13
+		    // ALLOW ENTER
+		    
+		  Case 48 to 57
+		    // ALLOW NUMBERS
+		    
+		  Else
+		    // BLOCK THE REST
+		    Return True
+		    
+		  End Select
+		End Function
 	#tag EndEvent
 #tag EndEvents
 #tag ViewBehavior

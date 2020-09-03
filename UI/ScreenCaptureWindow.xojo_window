@@ -64,7 +64,6 @@ Begin Window ScreenCaptureWindow
       Backdrop        =   0
       DoubleBuffer    =   False
       Enabled         =   True
-      EraseBackground =   "True"
       Height          =   100
       HelpTag         =   ""
       Index           =   -2147483648
