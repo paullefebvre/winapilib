@@ -642,7 +642,7 @@ Begin Window MainWindow
       TabIndex        =   20
       TabPanelIndex   =   0
       TabStop         =   True
-      Text            =   "100"
+      Text            =   "80"
       TextColor       =   &c00000000
       TextFont        =   "System"
       TextSize        =   0.0
@@ -808,7 +808,6 @@ End
 		    // SLIDE EXAMPLE
 		    AnimationTestWindow = New Animate_Window
 		    AnimationTestWindow.Title = "Slide Window Example"
-		    AnimationTestWindow.Show()
 		    
 		    Var animationTimeInt as Integer = animateSpeedTextfield.Text.ToDouble
 		    Var windowHandleInt as Integer = AnimationTestWindow.Handle
@@ -830,7 +829,6 @@ End
 		    // COLLAPSE EXAMPLE
 		    AnimationTestWindow = New Animate_Window
 		    AnimationTestWindow.Title = "Collapse Window Example"
-		    AnimationTestWindow.Show()
 		    
 		    Var animationTimeInt as Integer = animateSpeedTextfield.Text.ToDouble
 		    Var windowHandleInt as Integer = AnimationTestWindow.Handle
@@ -851,7 +849,6 @@ End
 		    // EXPAND EXAMPLE
 		    AnimationTestWindow = New Animate_Window
 		    AnimationTestWindow.Title = "Expand Window Example"
-		    AnimationTestWindow.Show()
 		    
 		    Var animationTimeInt as Integer = animateSpeedTextfield.Text.ToDouble
 		    Var windowHandleInt as Integer = AnimationTestWindow.Handle
@@ -873,7 +870,6 @@ End
 		    // FADE EXAMPLE
 		    AnimationTestWindow = New Animate_Window
 		    AnimationTestWindow.Title = "Fade Window Example"
-		    AnimationTestWindow.Show()
 		    
 		    Var animationTimeInt as Integer = animateSpeedTextfield.Text.ToDouble
 		    Var windowHandleInt as Integer = AnimationTestWindow.Handle
@@ -895,7 +891,6 @@ End
 		    // ROLL EXAMPLE
 		    AnimationTestWindow = New Animate_Window
 		    AnimationTestWindow.Title = "Roll Window Example"
-		    AnimationTestWindow.Show()
 		    
 		    Var animationTimeInt as Integer = animateSpeedTextfield.Text.ToDouble
 		    Var windowHandleInt as Integer = AnimationTestWindow.Handle
