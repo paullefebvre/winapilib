@@ -114,7 +114,7 @@ Protected Class SystemInfo
 
 	#tag Method, Flags = &h0
 		Shared Function LoggedInUserName() As Text
-		  #If TargetWin32
+		  #If TargetWindows Then
 		    // https://msdn.microsoft.com/en-us/library/windows/desktop/ms724432(v=vs.85).aspx
 		    
 		    Soft Declare Sub GetUserNameW Lib "AdvApi32" (lpBuffer As Ptr, ByRef nSize As Integer)
@@ -181,6 +181,7 @@ Protected Class SystemInfo
 			Group="ID"
 			InitialValue="-2147483648"
 			Type="Integer"
+			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="Left"
@@ -188,18 +189,23 @@ Protected Class SystemInfo
 			Group="Position"
 			InitialValue="0"
 			Type="Integer"
+			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="Name"
 			Visible=true
 			Group="ID"
+			InitialValue=""
 			Type="String"
+			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="Super"
 			Visible=true
 			Group="ID"
+			InitialValue=""
 			Type="String"
+			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="Top"
@@ -207,6 +213,7 @@ Protected Class SystemInfo
 			Group="Position"
 			InitialValue="0"
 			Type="Integer"
+			EditorType=""
 		#tag EndViewProperty
 	#tag EndViewBehavior
 End Class

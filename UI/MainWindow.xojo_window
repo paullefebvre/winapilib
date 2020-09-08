@@ -3,7 +3,6 @@ Begin Window MainWindow
    BackColor       =   &cFFFFFF00
    Backdrop        =   0
    CloseButton     =   True
-   Compatibility   =   ""
    Composite       =   False
    Frame           =   0
    FullScreen      =   False
@@ -11,7 +10,7 @@ Begin Window MainWindow
    HasBackColor    =   False
    Height          =   400
    ImplicitInstance=   True
-   LiveResize      =   True
+   LiveResize      =   "True"
    MacProcID       =   0
    MaxHeight       =   32000
    MaximizeButton  =   True
@@ -29,7 +28,7 @@ Begin Window MainWindow
    Begin PushButton ScreenCaptureButton
       AutoDeactivate  =   True
       Bold            =   False
-      ButtonStyle     =   "0"
+      ButtonStyle     =   0
       Cancel          =   False
       Caption         =   "Screen Capture"
       Default         =   False
@@ -53,6 +52,7 @@ Begin Window MainWindow
       TextSize        =   0.0
       TextUnit        =   0
       Top             =   19
+      Transparent     =   True
       Underline       =   False
       Visible         =   True
       Width           =   107
@@ -79,8 +79,9 @@ Begin Window MainWindow
       TabIndex        =   3
       TabPanelIndex   =   0
       TabStop         =   True
-      TickStyle       =   "0"
+      TickStyle       =   0
       Top             =   173
+      Transparent     =   True
       Value           =   100
       Visible         =   True
       Width           =   100
@@ -107,6 +108,7 @@ Begin Window MainWindow
       Selectable      =   False
       TabIndex        =   4
       TabPanelIndex   =   0
+      TabStop         =   True
       Text            =   "Opacity"
       TextAlign       =   0
       TextColor       =   &c00000000
@@ -141,6 +143,7 @@ Begin Window MainWindow
       Selectable      =   False
       TabIndex        =   5
       TabPanelIndex   =   0
+      TabStop         =   True
       Text            =   "CPUUsage"
       TextAlign       =   0
       TextColor       =   &c00000000
@@ -167,8 +170,7 @@ Begin Window MainWindow
       AutoDeactivate  =   True
       Backdrop        =   0
       DoubleBuffer    =   False
-      Enabled         =   True
-      EraseBackground =   True
+      Enabled         =   False
       Height          =   60
       HelpTag         =   ""
       Index           =   -2147483648
@@ -192,7 +194,7 @@ Begin Window MainWindow
    Begin PushButton FlashButton
       AutoDeactivate  =   True
       Bold            =   False
-      ButtonStyle     =   "0"
+      ButtonStyle     =   0
       Cancel          =   False
       Caption         =   "Flash"
       Default         =   False
@@ -216,6 +218,7 @@ Begin Window MainWindow
       TextSize        =   0.0
       TextUnit        =   0
       Top             =   19
+      Transparent     =   True
       Underline       =   False
       Visible         =   True
       Width           =   114
@@ -223,7 +226,7 @@ Begin Window MainWindow
    Begin PushButton TopmostToggleButton
       AutoDeactivate  =   True
       Bold            =   False
-      ButtonStyle     =   "0"
+      ButtonStyle     =   0
       Cancel          =   False
       Caption         =   "Toggle Topmost"
       Default         =   False
@@ -247,6 +250,7 @@ Begin Window MainWindow
       TextSize        =   0.0
       TextUnit        =   0
       Top             =   51
+      Transparent     =   True
       Underline       =   False
       Visible         =   True
       Width           =   114
@@ -254,7 +258,7 @@ Begin Window MainWindow
    Begin PushButton SystemInfoButton
       AutoDeactivate  =   True
       Bold            =   False
-      ButtonStyle     =   "0"
+      ButtonStyle     =   0
       Cancel          =   False
       Caption         =   "System Info"
       Default         =   False
@@ -278,6 +282,7 @@ Begin Window MainWindow
       TextSize        =   0.0
       TextUnit        =   0
       Top             =   51
+      Transparent     =   True
       Underline       =   False
       Visible         =   True
       Width           =   107
@@ -285,7 +290,7 @@ Begin Window MainWindow
    Begin PushButton PushButton1
       AutoDeactivate  =   True
       Bold            =   False
-      ButtonStyle     =   "0"
+      ButtonStyle     =   0
       Cancel          =   False
       Caption         =   "OS Version Info"
       Default         =   False
@@ -309,6 +314,7 @@ Begin Window MainWindow
       TextSize        =   0.0
       TextUnit        =   0
       Top             =   85
+      Transparent     =   True
       Underline       =   False
       Visible         =   True
       Width           =   107
@@ -316,7 +322,7 @@ Begin Window MainWindow
    Begin PushButton LaunchAndWaitButton
       AutoDeactivate  =   True
       Bold            =   False
-      ButtonStyle     =   "0"
+      ButtonStyle     =   0
       Cancel          =   False
       Caption         =   "Launch and Wait Notepad"
       Default         =   False
@@ -340,6 +346,7 @@ Begin Window MainWindow
       TextSize        =   0.0
       TextUnit        =   0
       Top             =   85
+      Transparent     =   True
       Underline       =   False
       Visible         =   True
       Width           =   168
@@ -347,7 +354,7 @@ Begin Window MainWindow
    Begin PushButton SelectFolderButton
       AutoDeactivate  =   True
       Bold            =   False
-      ButtonStyle     =   "0"
+      ButtonStyle     =   0
       Cancel          =   False
       Caption         =   "Minimalistic Select Folder"
       Default         =   False
@@ -371,6 +378,7 @@ Begin Window MainWindow
       TextSize        =   0.0
       TextUnit        =   0
       Top             =   119
+      Transparent     =   True
       Underline       =   False
       Visible         =   True
       Width           =   168
@@ -402,15 +410,294 @@ Begin Window MainWindow
       TextSize        =   0.0
       TextUnit        =   0
       Top             =   153
+      Transparent     =   True
       Underline       =   False
       Value           =   False
       Visible         =   True
       Width           =   177
    End
+   Begin PushButton slideButton
+      AutoDeactivate  =   True
+      Bold            =   False
+      ButtonStyle     =   "0"
+      Cancel          =   False
+      Caption         =   "Slide"
+      Default         =   False
+      Enabled         =   True
+      Height          =   20
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   485
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      Scope           =   2
+      TabIndex        =   14
+      TabPanelIndex   =   0
+      TabStop         =   True
+      TextFont        =   "System"
+      TextSize        =   0.0
+      TextUnit        =   0
+      Top             =   281
+      Transparent     =   False
+      Underline       =   False
+      Visible         =   True
+      Width           =   95
+   End
+   Begin PushButton collapseButton
+      AutoDeactivate  =   True
+      Bold            =   False
+      ButtonStyle     =   "0"
+      Cancel          =   False
+      Caption         =   "Collapse"
+      Default         =   False
+      Enabled         =   True
+      Height          =   20
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   378
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      Scope           =   2
+      TabIndex        =   15
+      TabPanelIndex   =   0
+      TabStop         =   True
+      TextFont        =   "System"
+      TextSize        =   0.0
+      TextUnit        =   0
+      Top             =   313
+      Transparent     =   False
+      Underline       =   False
+      Visible         =   True
+      Width           =   95
+   End
+   Begin PushButton expandButton
+      AutoDeactivate  =   True
+      Bold            =   False
+      ButtonStyle     =   "0"
+      Cancel          =   False
+      Caption         =   "Expand"
+      Default         =   False
+      Enabled         =   True
+      Height          =   20
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   485
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      Scope           =   2
+      TabIndex        =   16
+      TabPanelIndex   =   0
+      TabStop         =   True
+      TextFont        =   "System"
+      TextSize        =   0.0
+      TextUnit        =   0
+      Top             =   313
+      Transparent     =   False
+      Underline       =   False
+      Visible         =   True
+      Width           =   95
+   End
+   Begin PushButton fadeButton
+      AutoDeactivate  =   True
+      Bold            =   False
+      ButtonStyle     =   "0"
+      Cancel          =   False
+      Caption         =   "Fade"
+      Default         =   False
+      Enabled         =   True
+      Height          =   20
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   378
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      Scope           =   2
+      TabIndex        =   17
+      TabPanelIndex   =   0
+      TabStop         =   True
+      TextFont        =   "System"
+      TextSize        =   0.0
+      TextUnit        =   0
+      Top             =   345
+      Transparent     =   False
+      Underline       =   False
+      Visible         =   True
+      Width           =   95
+   End
+   Begin PushButton rollButton
+      AutoDeactivate  =   True
+      Bold            =   False
+      ButtonStyle     =   "0"
+      Cancel          =   False
+      Caption         =   "Roll"
+      Default         =   False
+      Enabled         =   True
+      Height          =   20
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   378
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      Scope           =   2
+      TabIndex        =   18
+      TabPanelIndex   =   0
+      TabStop         =   True
+      TextFont        =   "System"
+      TextSize        =   0.0
+      TextUnit        =   0
+      Top             =   280
+      Transparent     =   False
+      Underline       =   False
+      Visible         =   True
+      Width           =   95
+   End
+   Begin Label AnimateWindowLabel
+      AutoDeactivate  =   True
+      Bold            =   False
+      DataField       =   ""
+      DataSource      =   ""
+      Enabled         =   True
+      Height          =   20
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   378
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      Multiline       =   False
+      Scope           =   0
+      Selectable      =   False
+      TabIndex        =   19
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Text            =   "AnimateWindow Examples"
+      TextAlign       =   2
+      TextColor       =   &c00000000
+      TextFont        =   "System"
+      TextSize        =   0.0
+      TextUnit        =   0
+      Top             =   222
+      Transparent     =   True
+      Underline       =   False
+      Visible         =   True
+      Width           =   202
+   End
+   Begin TextField animateSpeedTextfield
+      AcceptTabs      =   False
+      Alignment       =   "3"
+      AutoDeactivate  =   True
+      AutomaticallyCheckSpelling=   False
+      BackColor       =   &cFFFFFF00
+      Bold            =   False
+      Border          =   True
+      CueText         =   ""
+      DataField       =   ""
+      DataSource      =   ""
+      Enabled         =   True
+      Format          =   ""
+      Height          =   22
+      HelpTag         =   ""
+      Index           =   -2147483648
+      Italic          =   False
+      Left            =   378
+      LimitText       =   0
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      Mask            =   ""
+      Password        =   False
+      ReadOnly        =   False
+      Scope           =   0
+      TabIndex        =   20
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Text            =   "80"
+      TextColor       =   &c00000000
+      TextFont        =   "System"
+      TextSize        =   0.0
+      TextUnit        =   0
+      Top             =   247
+      Transparent     =   False
+      Underline       =   False
+      UseFocusRing    =   True
+      Visible         =   True
+      Width           =   49
+   End
+   Begin Label AnimateWindowSpeedLabel
+      AutoDeactivate  =   True
+      Bold            =   False
+      DataField       =   ""
+      DataSource      =   ""
+      Enabled         =   True
+      Height          =   20
+      HelpTag         =   ""
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   439
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      Multiline       =   False
+      Scope           =   0
+      Selectable      =   False
+      TabIndex        =   21
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Text            =   "Speed (MS)"
+      TextAlign       =   0
+      TextColor       =   &c00000000
+      TextFont        =   "System"
+      TextSize        =   0.0
+      TextUnit        =   0
+      Top             =   248
+      Transparent     =   True
+      Underline       =   False
+      Visible         =   True
+      Width           =   141
+   End
 End
 #tag EndWindow
 
 #tag WindowCode
+	#tag Property, Flags = &h0
+		AnimationTestWindow As Animate_Window
+	#tag EndProperty
+
+
 #tag EndWindowCode
 
 #tag Events ScreenCaptureButton
@@ -514,41 +801,170 @@ End
 		End Sub
 	#tag EndEvent
 #tag EndEvents
+#tag Events slideButton
+	#tag Event
+		Sub Action()
+		  #If TargetWindows Then
+		    // SLIDE EXAMPLE
+		    AnimationTestWindow = New Animate_Window
+		    AnimationTestWindow.Title = "Slide Window Example"
+		    
+		    Var animationTimeInt as Integer = animateSpeedTextfield.Text.ToDouble
+		    Var windowHandleInt as Integer = AnimationTestWindow.Handle
+		    Var activateWindowInt as Integer = WinAPILib.AnimateWindow.AW_ACTIVATE
+		    Var slideEffectInt as Integer = WinAPILib.AnimateWindow.AW_HOR_POSITIVE
+		    
+		    Var activateInt as Integer = WinAPILib.AnimateWindow.AnimateWindow(windowHandleInt, animationTimeInt, activateWindowInt)
+		    Var resultInt as Integer = WinAPILib.AnimateWindow.AnimateWindow(windowHandleInt, animationTimeInt, slideEffectInt)
+		  #endif
+		  
+		  
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events collapseButton
+	#tag Event
+		Sub Action()
+		  #If TargetWindows Then
+		    // COLLAPSE EXAMPLE
+		    AnimationTestWindow = New Animate_Window
+		    AnimationTestWindow.Title = "Collapse Window Example"
+		    
+		    Var animationTimeInt as Integer = animateSpeedTextfield.Text.ToDouble
+		    Var windowHandleInt as Integer = AnimationTestWindow.Handle
+		    Var activateWindowInt as Integer = WinAPILib.AnimateWindow.AW_ACTIVATE
+		    Var collapseInt as Integer = WinAPILib.AnimateWindow.AW_HIDE
+		    
+		    Var activateInt as Integer = WinAPILib.AnimateWindow.AnimateWindow(windowHandleInt, animationTimeInt, activateWindowInt)
+		    Var resultInt as Integer = WinAPILib.AnimateWindow.AnimateWindow(windowHandleInt, animationTimeInt, collapseInt)
+		  #endif
+		  
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events expandButton
+	#tag Event
+		Sub Action()
+		  #If TargetWindows Then
+		    // EXPAND EXAMPLE
+		    AnimationTestWindow = New Animate_Window
+		    AnimationTestWindow.Title = "Expand Window Example"
+		    
+		    Var animationTimeInt as Integer = animateSpeedTextfield.Text.ToDouble
+		    Var windowHandleInt as Integer = AnimationTestWindow.Handle
+		    Var activateWindowInt as Integer = WinAPILib.AnimateWindow.AW_ACTIVATE
+		    Var expandEffectInt as Integer = WinAPILib.AnimateWindow.AW_CENTER
+		    
+		    Var activateInt as Integer = WinAPILib.AnimateWindow.AnimateWindow(windowHandleInt, animationTimeInt, activateWindowInt)
+		    Var resultInt as Integer = WinAPILib.AnimateWindow.AnimateWindow(windowHandleInt, animationTimeInt, expandEffectInt)
+		  #endif
+		  
+		  
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events fadeButton
+	#tag Event
+		Sub Action()
+		  #If TargetWindows Then
+		    // FADE EXAMPLE
+		    AnimationTestWindow = New Animate_Window
+		    AnimationTestWindow.Title = "Fade Window Example"
+		    
+		    Var animationTimeInt as Integer = animateSpeedTextfield.Text.ToDouble
+		    Var windowHandleInt as Integer = AnimationTestWindow.Handle
+		    Var activateWindowInt as Integer = WinAPILib.AnimateWindow.AW_ACTIVATE
+		    Var fadeEffectInt as Integer = WinAPILib.AnimateWindow.AW_BLEND
+		    
+		    Var activateInt as Integer = WinAPILib.AnimateWindow.AnimateWindow(windowHandleInt, animationTimeInt, activateWindowInt)
+		    Var resultInt as Integer = WinAPILib.AnimateWindow.AnimateWindow(windowHandleInt, animationTimeInt, fadeEffectInt)
+		  #endif
+		  
+		  
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events rollButton
+	#tag Event
+		Sub Action()
+		  #If TargetWindows Then
+		    // ROLL EXAMPLE
+		    AnimationTestWindow = New Animate_Window
+		    AnimationTestWindow.Title = "Roll Window Example"
+		    
+		    Var animationTimeInt as Integer = animateSpeedTextfield.Text.ToDouble
+		    Var windowHandleInt as Integer = AnimationTestWindow.Handle
+		    Var activateWindowInt as Integer = WinAPILib.AnimateWindow.AW_ACTIVATE
+		    Var rollEffectInt as Integer = WinAPILib.AnimateWindow.AW_HOR_NEGATIVE
+		    
+		    Var activateInt as Integer = WinAPILib.AnimateWindow.AnimateWindow(windowHandleInt, animationTimeInt, activateWindowInt)
+		    Var resultInt as Integer = WinAPILib.AnimateWindow.AnimateWindow(windowHandleInt, animationTimeInt, rollEffectInt)
+		  #endif
+		  
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events animateSpeedTextfield
+	#tag Event
+		Function KeyDown(Key As String) As Boolean
+		  // ONLY ALLOW DIGITS
+		  Select Case Asc(Key)
+		  Case 8
+		    // ALLOW BACKSPACE
+		    
+		  Case 10, 13
+		    // ALLOW ENTER
+		    
+		  Case 48 to 57
+		    // ALLOW NUMBERS
+		    
+		  Else
+		    // BLOCK THE REST
+		    Return True
+		    
+		  End Select
+		End Function
+	#tag EndEvent
+#tag EndEvents
 #tag ViewBehavior
 	#tag ViewProperty
-		Name="BackColor"
+		Name="MinimumWidth"
 		Visible=true
-		Group="Background"
-		InitialValue="&hFFFFFF"
-		Type="Color"
+		Group="Size"
+		InitialValue="64"
+		Type="Integer"
+		EditorType=""
 	#tag EndViewProperty
 	#tag ViewProperty
-		Name="Backdrop"
+		Name="MinimumHeight"
 		Visible=true
-		Group="Background"
-		Type="Picture"
-		EditorType="Picture"
+		Group="Size"
+		InitialValue="64"
+		Type="Integer"
+		EditorType=""
 	#tag EndViewProperty
 	#tag ViewProperty
-		Name="CloseButton"
+		Name="MaximumWidth"
 		Visible=true
-		Group="Frame"
-		InitialValue="True"
-		Type="Boolean"
-		EditorType="Boolean"
+		Group="Size"
+		InitialValue="32000"
+		Type="Integer"
+		EditorType=""
 	#tag EndViewProperty
 	#tag ViewProperty
-		Name="Composite"
-		Group="OS X (Carbon)"
-		InitialValue="False"
-		Type="Boolean"
+		Name="MaximumHeight"
+		Visible=true
+		Group="Size"
+		InitialValue="32000"
+		Type="Integer"
+		EditorType=""
 	#tag EndViewProperty
 	#tag ViewProperty
-		Name="Frame"
+		Name="Type"
 		Visible=true
 		Group="Frame"
 		InitialValue="0"
-		Type="Integer"
+		Type="Types"
 		EditorType="Enum"
 		#tag EnumValues
 			"0 - Document"
@@ -565,134 +981,43 @@ End
 		#tag EndEnumValues
 	#tag EndViewProperty
 	#tag ViewProperty
-		Name="FullScreen"
-		Group="Behavior"
-		InitialValue="False"
-		Type="Boolean"
-		EditorType="Boolean"
-	#tag EndViewProperty
-	#tag ViewProperty
-		Name="FullScreenButton"
-		Visible=true
-		Group="Frame"
-		InitialValue="False"
-		Type="Boolean"
-		EditorType="Boolean"
-	#tag EndViewProperty
-	#tag ViewProperty
-		Name="HasBackColor"
-		Visible=true
-		Group="Background"
-		InitialValue="False"
-		Type="Boolean"
-	#tag EndViewProperty
-	#tag ViewProperty
-		Name="Height"
-		Visible=true
-		Group="Size"
-		InitialValue="400"
-		Type="Integer"
-	#tag EndViewProperty
-	#tag ViewProperty
-		Name="ImplicitInstance"
-		Visible=true
-		Group="Behavior"
-		InitialValue="True"
-		Type="Boolean"
-		EditorType="Boolean"
-	#tag EndViewProperty
-	#tag ViewProperty
-		Name="Interfaces"
-		Visible=true
-		Group="ID"
-		Type="String"
-		EditorType="String"
-	#tag EndViewProperty
-	#tag ViewProperty
-		Name="LiveResize"
-		Visible=true
-		Group="Behavior"
-		InitialValue="True"
-		Type="Boolean"
-		EditorType="Boolean"
-	#tag EndViewProperty
-	#tag ViewProperty
-		Name="MacProcID"
-		Group="OS X (Carbon)"
-		InitialValue="0"
-		Type="Integer"
-	#tag EndViewProperty
-	#tag ViewProperty
-		Name="MaxHeight"
-		Visible=true
-		Group="Size"
-		InitialValue="32000"
-		Type="Integer"
-	#tag EndViewProperty
-	#tag ViewProperty
-		Name="MaximizeButton"
+		Name="HasCloseButton"
 		Visible=true
 		Group="Frame"
 		InitialValue="True"
 		Type="Boolean"
-		EditorType="Boolean"
+		EditorType=""
 	#tag EndViewProperty
 	#tag ViewProperty
-		Name="MaxWidth"
-		Visible=true
-		Group="Size"
-		InitialValue="32000"
-		Type="Integer"
-	#tag EndViewProperty
-	#tag ViewProperty
-		Name="MenuBar"
-		Visible=true
-		Group="Menus"
-		Type="MenuBar"
-		EditorType="MenuBar"
-	#tag EndViewProperty
-	#tag ViewProperty
-		Name="MenuBarVisible"
-		Group="Behavior"
-		InitialValue="True"
-		Type="Boolean"
-		EditorType="Boolean"
-	#tag EndViewProperty
-	#tag ViewProperty
-		Name="MinHeight"
-		Visible=true
-		Group="Size"
-		InitialValue="64"
-		Type="Integer"
-	#tag EndViewProperty
-	#tag ViewProperty
-		Name="MinimizeButton"
+		Name="HasMaximizeButton"
 		Visible=true
 		Group="Frame"
 		InitialValue="True"
 		Type="Boolean"
-		EditorType="Boolean"
+		EditorType=""
 	#tag EndViewProperty
 	#tag ViewProperty
-		Name="MinWidth"
+		Name="HasMinimizeButton"
 		Visible=true
-		Group="Size"
-		InitialValue="64"
-		Type="Integer"
+		Group="Frame"
+		InitialValue="True"
+		Type="Boolean"
+		EditorType=""
 	#tag EndViewProperty
 	#tag ViewProperty
-		Name="Name"
+		Name="HasFullScreenButton"
 		Visible=true
-		Group="ID"
-		Type="String"
-		EditorType="String"
+		Group="Frame"
+		InitialValue="False"
+		Type="Boolean"
+		EditorType=""
 	#tag EndViewProperty
 	#tag ViewProperty
-		Name="Placement"
+		Name="DefaultLocation"
 		Visible=true
 		Group="Behavior"
 		InitialValue="0"
-		Type="Integer"
+		Type="Locations"
 		EditorType="Enum"
 		#tag EnumValues
 			"0 - Default"
@@ -703,19 +1028,116 @@ End
 		#tag EndEnumValues
 	#tag EndViewProperty
 	#tag ViewProperty
+		Name="HasBackgroundColor"
+		Visible=true
+		Group="Background"
+		InitialValue="False"
+		Type="Boolean"
+		EditorType=""
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="BackgroundColor"
+		Visible=true
+		Group="Background"
+		InitialValue="&hFFFFFF"
+		Type="Color"
+		EditorType="Color"
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="Backdrop"
+		Visible=true
+		Group="Background"
+		InitialValue=""
+		Type="Picture"
+		EditorType=""
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="Composite"
+		Visible=false
+		Group="OS X (Carbon)"
+		InitialValue="False"
+		Type="Boolean"
+		EditorType=""
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="FullScreen"
+		Visible=false
+		Group="Behavior"
+		InitialValue="False"
+		Type="Boolean"
+		EditorType=""
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="Height"
+		Visible=true
+		Group="Size"
+		InitialValue="400"
+		Type="Integer"
+		EditorType=""
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="ImplicitInstance"
+		Visible=true
+		Group="Behavior"
+		InitialValue="True"
+		Type="Boolean"
+		EditorType=""
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="Interfaces"
+		Visible=true
+		Group="ID"
+		InitialValue=""
+		Type="String"
+		EditorType=""
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="MacProcID"
+		Visible=false
+		Group="OS X (Carbon)"
+		InitialValue="0"
+		Type="Integer"
+		EditorType=""
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="MenuBar"
+		Visible=true
+		Group="Menus"
+		InitialValue=""
+		Type="MenuBar"
+		EditorType=""
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="MenuBarVisible"
+		Visible=false
+		Group="Behavior"
+		InitialValue="True"
+		Type="Boolean"
+		EditorType=""
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="Name"
+		Visible=true
+		Group="ID"
+		InitialValue=""
+		Type="String"
+		EditorType=""
+	#tag EndViewProperty
+	#tag ViewProperty
 		Name="Resizeable"
 		Visible=true
 		Group="Frame"
 		InitialValue="True"
 		Type="Boolean"
-		EditorType="Boolean"
+		EditorType=""
 	#tag EndViewProperty
 	#tag ViewProperty
 		Name="Super"
 		Visible=true
 		Group="ID"
+		InitialValue=""
 		Type="String"
-		EditorType="String"
+		EditorType=""
 	#tag EndViewProperty
 	#tag ViewProperty
 		Name="Title"
@@ -723,6 +1145,7 @@ End
 		Group="Frame"
 		InitialValue="Untitled"
 		Type="String"
+		EditorType=""
 	#tag EndViewProperty
 	#tag ViewProperty
 		Name="Visible"
@@ -730,7 +1153,7 @@ End
 		Group="Behavior"
 		InitialValue="True"
 		Type="Boolean"
-		EditorType="Boolean"
+		EditorType=""
 	#tag EndViewProperty
 	#tag ViewProperty
 		Name="Width"
@@ -738,5 +1161,6 @@ End
 		Group="Size"
 		InitialValue="600"
 		Type="Integer"
+		EditorType=""
 	#tag EndViewProperty
 #tag EndViewBehavior

@@ -2,13 +2,14 @@
 Protected Class SelectFolderDialog
 	#tag Method, Flags = &h0
 		Shared Function SelectFolder(title as string, root as WinApiLib.SelectFolderDialog.RootFolders=WinApiLib.SelectFolderDialog.RootFolders.CSIDL_DESKTOP, flags as Integer=0) As FolderItem
-		  #if TargetWin32
+		  #if TargetWindows
 		    declare Function SHBrowseForFolderA lib "Shell32"(byref info as BROWSEINFOA) as ptr
 		    declare Function SHGetPathFromIDListA lib "Shell32"(list as ptr,path as ptr) as Boolean
 		    
 		    dim info as BROWSEINFOA
 		    info.title=title
-		    info.root=uint32(root)
+		    Var rootEnumInt as uInt32 = CType(root, uInt32)
+		    info.root=rootEnumInt
 		    info.Flags=Flags
 		    dim displayNameMB as new MemoryBlock(260)
 		    dim pathMB as new MemoryBlock(260)
@@ -135,6 +136,7 @@ Protected Class SelectFolderDialog
 			Group="ID"
 			InitialValue="-2147483648"
 			Type="Integer"
+			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="Left"
@@ -142,18 +144,23 @@ Protected Class SelectFolderDialog
 			Group="Position"
 			InitialValue="0"
 			Type="Integer"
+			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="Name"
 			Visible=true
 			Group="ID"
+			InitialValue=""
 			Type="String"
+			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="Super"
 			Visible=true
 			Group="ID"
+			InitialValue=""
 			Type="String"
+			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="Top"
@@ -161,6 +168,23 @@ Protected Class SelectFolderDialog
 			Group="Position"
 			InitialValue="0"
 			Type="Integer"
+			EditorType=""
+		#tag EndViewProperty
+		#tag ViewProperty
+			Name="PromptText"
+			Visible=false
+			Group="Behavior"
+			InitialValue=""
+			Type="String"
+			EditorType=""
+		#tag EndViewProperty
+		#tag ViewProperty
+			Name="ShowEditBox"
+			Visible=false
+			Group="Behavior"
+			InitialValue=""
+			Type="Boolean"
+			EditorType=""
 		#tag EndViewProperty
 	#tag EndViewBehavior
 End Class
