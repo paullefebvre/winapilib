@@ -36,7 +36,7 @@ Protected Class FileIO
 		    End If
 		    
 		    Dim ret As Boolean
-		    ret = CreateProcessW(f.AbsolutePath, params, 0, 0, False, 0, 0, 0, startupInfo, procInfo)
+		    ret = CreateProcessW(f.NativePath, params, 0, 0, False, 0, 0, 0, startupInfo, procInfo)
 		    If Not ret Then Return
 		    
 		    Declare Function WaitForSingleObject Lib "Kernel32" (handle As Integer, howLong As Integer) As Integer
@@ -71,6 +71,7 @@ Protected Class FileIO
 			Group="ID"
 			InitialValue="-2147483648"
 			Type="Integer"
+			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="Left"
@@ -78,18 +79,23 @@ Protected Class FileIO
 			Group="Position"
 			InitialValue="0"
 			Type="Integer"
+			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="Name"
 			Visible=true
 			Group="ID"
+			InitialValue=""
 			Type="String"
+			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="Super"
 			Visible=true
 			Group="ID"
+			InitialValue=""
 			Type="String"
+			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="Top"
@@ -97,6 +103,7 @@ Protected Class FileIO
 			Group="Position"
 			InitialValue="0"
 			Type="Integer"
+			EditorType=""
 		#tag EndViewProperty
 	#tag EndViewBehavior
 End Class
