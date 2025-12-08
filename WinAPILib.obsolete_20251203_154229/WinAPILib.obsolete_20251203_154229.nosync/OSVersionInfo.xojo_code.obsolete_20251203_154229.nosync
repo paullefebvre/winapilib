@@ -10,15 +10,15 @@ Protected Class OSVersionInfo
 		Sub Constructor()
 		  #If TargetWindows Then
 		    
-		    Dim m As MemoryBlock
-		    Dim res As Boolean
-		    Dim dwOSVersionInfoSize, wsuitemask, ret, i As Integer
-		    Dim szCSDVersion, s As String
+		    Var m As MemoryBlock
+		    Var res As Boolean
+		    Var dwOSVersionInfoSize, wsuitemask, ret, i As Integer
+		    Var szCSDVersion, s As String
 		    
 		    Soft Declare Function GetVersionExA Lib "Kernel32" (lpVersionInformation As Ptr) As Integer
 		    Soft Declare Function GetVersionExW Lib "Kernel32" (lpVersionInformation As Ptr) As Integer
 		    
-		    Dim bUsingUnicode As Boolean = False
+		    Var bUsingUnicode As Boolean = False
 		    If System.IsFunctionAvailable("GetVersionExW", "Kernel32") Then
 		      bUsingUnicode = True
 		      m = New MemoryBlock(284) ' use this for osversioninfoex structure (2000+ only)
@@ -51,7 +51,7 @@ Protected Class OSVersionInfo
 		          Soft Declare Function RtlGetVersion Lib "ntdll" (lpVersionInformation As Ptr) As Integer
 		          
 		          bUsingUnicode = True
-		          Dim m2 As New MemoryBlock(284) // use this for osversioninfoex structure (2000+ only)
+		          Var m2 As New MemoryBlock(284) // use this for osversioninfoex structure (2000+ only)
 		          m2.long(0) = m2.Size // must set size before calling getversionex
 		          ret = RtlGetVersion(m2) // if not 2000+, will return 0
 		          If ret = 0 Then
@@ -74,7 +74,7 @@ Protected Class OSVersionInfo
 		    mBuild = m.Int32Value(12)
 		    mPlatformId = m.Int32Value(16)
 		    
-		    Dim nextVal As Integer
+		    Var nextVal As Integer
 		    If bUsingUnicode Then
 		      szCSDVersion = m.WString(20)
 		      nextVal = 276
@@ -288,6 +288,7 @@ Protected Class OSVersionInfo
 			Group="ID"
 			InitialValue="-2147483648"
 			Type="Integer"
+			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="Left"
@@ -295,18 +296,23 @@ Protected Class OSVersionInfo
 			Group="Position"
 			InitialValue="0"
 			Type="Integer"
+			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="Name"
 			Visible=true
 			Group="ID"
+			InitialValue=""
 			Type="String"
+			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="Super"
 			Visible=true
 			Group="ID"
+			InitialValue=""
 			Type="String"
+			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="Top"
@@ -314,6 +320,7 @@ Protected Class OSVersionInfo
 			Group="Position"
 			InitialValue="0"
 			Type="Integer"
+			EditorType=""
 		#tag EndViewProperty
 	#tag EndViewBehavior
 End Class

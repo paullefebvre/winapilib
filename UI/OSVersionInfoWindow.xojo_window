@@ -1,31 +1,31 @@
-#tag Window
-Begin Window OSVersionInfoWindow
-   BackColor       =   &cFFFFFF00
+#tag DesktopWindow
+Begin DesktopWindow OSVersionInfoWindow
    Backdrop        =   0
-   CloseButton     =   True
+   BackgroundColor =   &cFFFFFF00
    Composite       =   False
-   Frame           =   0
+   DefaultLocation =   0
    FullScreen      =   False
-   FullScreenButton=   False
-   HasBackColor    =   False
+   HasBackgroundColor=   False
+   HasCloseButton  =   True
+   HasFullScreenButton=   False
+   HasMaximizeButton=   True
+   HasMinimizeButton=   True
+   HasTitleBar     =   True
    Height          =   474
    ImplicitInstance=   False
-   LiveResize      =   "True"
    MacProcID       =   0
-   MaxHeight       =   32000
-   MaximizeButton  =   True
-   MaxWidth        =   32000
+   MaximumHeight   =   32000
+   MaximumWidth    =   32000
    MenuBar         =   0
    MenuBarVisible  =   True
-   MinHeight       =   64
-   MinimizeButton  =   True
-   MinWidth        =   64
-   Placement       =   0
+   MinimumHeight   =   64
+   MinimumWidth    =   64
    Resizeable      =   True
    Title           =   "Windows Version Info"
+   Type            =   0
    Visible         =   True
    Width           =   350
-   Begin Listbox VersionList
+   Begin DesktopListBox VersionList
       AutoDeactivate  =   True
       AutoHideScrollbars=   True
       Bold            =   False
@@ -33,14 +33,11 @@ Begin Window OSVersionInfoWindow
       ColumnCount     =   2
       ColumnsResizable=   False
       ColumnWidths    =   ""
-      DataField       =   ""
-      DataSource      =   ""
       DefaultRowHeight=   -1
       Enabled         =   True
       EnableDrag      =   False
       EnableDragReorder=   False
-      GridLinesHorizontal=   0
-      GridLinesVertical=   0
+      GridLineStyle   =   0
       HasHeading      =   False
       HeadingIndex    =   -1
       Height          =   434
@@ -78,21 +75,21 @@ Begin Window OSVersionInfoWindow
       _ScrollWidth    =   -1
    End
 End
-#tag EndWindow
+#tag EndDesktopWindow
 
 #tag WindowCode
 	#tag Event
-		Sub Open()
-		  Dim versionInfo As New WinAPILib.OSVersionInfo
+		Sub Opening() Handles Opening
+		  Var versionInfo As New WinAPILib.OSVersionInfo
 		  
-		  VersionList.AddRow("MajorVersion", versionInfo.MajorVersion.ToText)
-		  VersionList.AddRow("MinorVersion", versionInfo.MinorVersion.ToText)
-		  VersionList.AddRow("Build", versionInfo.Build.ToText)
+		  VersionList.AddRow("MajorVersion", versionInfo.MajorVersion.ToString)
+		  VersionList.AddRow("MinorVersion", versionInfo.MinorVersion.ToString)
+		  VersionList.AddRow("Build", versionInfo.Build.ToString)
 		  VersionList.AddRow("ExtraInfo", versionInfo.ExtraInfo)
 		  VersionList.AddRow("Mode", versionInfo.Mode)
 		  VersionList.AddRow("OSName", versionInfo.OSName)
 		  VersionList.AddRow("OSSuites", versionInfo.OSSuites)
-		  VersionList.AddRow("PlatformID", versionInfo.PlatformID.ToText)
+		  VersionList.AddRow("PlatformID", versionInfo.PlatformID.ToString)
 		  VersionList.AddRow("ServicePack", versionInfo.ServicePack)
 		  VersionList.AddRow("SuiteMask", versionInfo.SuiteMask) 
 		  VersionList.AddRow("Version", versionInfo.Version)

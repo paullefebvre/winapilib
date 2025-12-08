@@ -12,7 +12,7 @@ Protected Class FileIO
 		    procAttribs As Integer, threadAttribs As Integer, inheritHandles As Boolean, flags As UInt32, _
 		    env As Integer, curDir As Integer, startupInfo As Ptr, procInfo As Ptr) As Boolean
 		    
-		    Dim startupInfo, procInfo As MemoryBlock
+		    Var startupInfo, procInfo As MemoryBlock
 		    
 		    #If Target64Bit
 		      Const sizeOfPtr = 8
@@ -28,14 +28,14 @@ Protected Class FileIO
 		    
 		    procInfo = New MemoryBlock((2 * sizeOfPtr) + 4 + 4)
 		    
-		    Dim deskStr, deskPtr As MemoryBlock
+		    Var deskStr, deskPtr As MemoryBlock
 		    If deskName <> "" Then
 		      deskStr = ConvertEncoding(deskName + Chr(0), Encodings.UTF16)
 		      
 		      startupInfo.Ptr(2 * sizeOfPtr) = deskStr
 		    End If
 		    
-		    Dim ret As Boolean
+		    Var ret As Boolean
 		    ret = CreateProcessW(f.NativePath, params, 0, 0, False, 0, 0, 0, startupInfo, procInfo)
 		    If Not ret Then Return
 		    

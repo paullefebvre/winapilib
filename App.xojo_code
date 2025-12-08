@@ -4,7 +4,7 @@ Inherits Application
 	#tag Event
 		Sub Open()
 		  #If Not TargetWindows Then
-		    MsgBox("WinAPILib only works on Microsoft Windows.")
+		    MessageBox("WinAPILib only works on Microsoft Windows.")
 		    Quit
 		  #EndIf
 		End Sub

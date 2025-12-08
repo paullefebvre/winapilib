@@ -1,15 +1,16 @@
-#tag Window
-Begin Window Animate_Window
+#tag DesktopWindow
+Begin DesktopWindow Animate_Window
    Backdrop        =   0
    BackgroundColor =   &cFFFFFF00
    Composite       =   False
-   DefaultLocation =   "2"
+   DefaultLocation =   2
    FullScreen      =   False
-   HasBackColor    =   False
+   HasBackgroundColor=   False
    HasCloseButton  =   True
    HasFullScreenButton=   False
    HasMaximizeButton=   False
    HasMinimizeButton=   False
+   HasTitleBar     =   True
    Height          =   400
    ImplicitInstance=   False
    MacProcID       =   0
@@ -21,15 +22,15 @@ Begin Window Animate_Window
    MinimumWidth    =   64
    Resizeable      =   False
    Title           =   "Window Test"
-   Type            =   "0"
+   Type            =   0
    Visible         =   True
    Width           =   600
 End
-#tag EndWindow
+#tag EndDesktopWindow
 
 #tag WindowCode
 	#tag Event
-		Sub Open()
+		Sub Opening()
 		  Self.SetFocus()
 		End Sub
 	#tag EndEvent

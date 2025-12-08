@@ -67,7 +67,7 @@ Inherits Canvas
 		    
 		    Declare Function GetModuleHandleA Lib "Kernel32" (name As Ptr) As Ptr
 		    
-		    Dim hInstance As Ptr = GetModuleHandleA(Nil)
+		    Var hInstance As Ptr = GetModuleHandleA(Nil)
 		    
 		    Const WS_CHILD = &h40000000
 		    Const WS_VISIBLE = &h10000000
@@ -125,7 +125,7 @@ Inherits Canvas
 		    // We have two lists, so which list we work on
 		    // may change.  If the list hasn't been created
 		    // yet, then we need to make it now as well.
-		    Dim flags As Integer
+		    Var flags As Integer
 		    Select Case p.Depth
 		    Case 32
 		      flags = ILC_COLOR32
@@ -139,19 +139,19 @@ Inherits Canvas
 		      flags = ILC_COLOR4
 		    End
 		    
-		    Dim imageList As Ptr
+		    Var imageList As Ptr
 		    // Make the new image list
 		    imageList = ImageList_Create(p.Width, p.Height, flags, 1, 1)
 		    
-		    Declare Sub SendMessage Lib "User32" Alias "SendMessageW" (hwnd As Ptr, msg As UInt32, wParam As Integer, lParam As Ptr )
-		    Call SendMessage( mCommandHandle, TVM_SETIMAGELIST, 0, imageList)
+		    Declare Sub SendMessage Lib "User32" Alias "SendMessageW" (hwnd As Ptr, msg As UInt32, wParam As Integer, lParam As Ptr)
+		    Call SendMessage(mCommandHandle, TVM_SETIMAGELIST, 0, imageList)
 		    
 		    // Now we have an image list to work with, so let's
 		    // add the picture.  This is rather much a pain in 
 		    // the arse, but that's ok, we can do it  using declares!
 		    // We need to make an HBITMAP from the image that
 		    // also uses the mask properly
-		    Dim hbitmap As Ptr = p.CopyOSHandle(Picture.HandleType.WindowsBMP)
+		    Var hbitmap As Ptr = p.CopyOSHandle(Picture.HandleType.WindowsBMP)
 		    
 		    // Now that we have the HBITMAP from the Picture
 		    // object, we can add it to the image list
@@ -213,7 +213,7 @@ Inherits Canvas
 		    
 		    Declare Sub SendMessageW Lib "User32" (hwnd As Ptr, msg As Int32, wParam As Integer, ByRef lParam As BUTTON_IMAGELIST)
 		    
-		    Dim buttonImage As BUTTON_IMAGELIST
+		    Var buttonImage As BUTTON_IMAGELIST
 		    buttonImage.himl = CreateImageList(p)
 		    
 		    SendMessageW(mCommandHandle, BCM_SETIMAGELIST, 0, buttonImage)
@@ -237,7 +237,7 @@ Inherits Canvas
 		  #If TargetWindows Then
 		    #Pragma X86CallingConvention StdCall
 		    
-		    Dim obj As CommandLink = sWndProcMap.Value(hWnd)
+		    Var obj As CommandLink = sWndProcMap.Value(hWnd)
 		    If obj <> Nil Then
 		      Return obj.InternalWndProc(msg, wParam, lParam)
 		    End If
@@ -282,11 +282,11 @@ Inherits Canvas
 
 	#tag Structure, Name = BUTTON_IMAGELIST, Flags = &h21
 		himl As Ptr
-		  margin As RECT
+		  margin As SRECT
 		uAlign As UInt32
 	#tag EndStructure
 
-	#tag Structure, Name = RECT, Flags = &h21
+	#tag Structure, Name = SRECT, Flags = &h21
 		left As Int32
 		  top As Int32
 		  right As Int32

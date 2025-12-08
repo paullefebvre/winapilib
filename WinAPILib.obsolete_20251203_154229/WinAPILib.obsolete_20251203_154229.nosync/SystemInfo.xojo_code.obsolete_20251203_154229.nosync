@@ -7,8 +7,8 @@ Protected Class SystemInfo
 		    
 		    Soft Declare Sub GetComputerNameW Lib "Kernel32" (name As Ptr, ByRef size As Integer)
 		    
-		    Dim mb As New MemoryBlock(1024)
-		    Dim size As Integer = mb.Size
+		    Var mb As New MemoryBlock(1024)
+		    Var size As Integer = mb.Size
 		    
 		    If System.IsFunctionAvailable("GetComputerNameW", "Kernel32") Then
 		      GetComputerNameW(mb, size)
@@ -24,15 +24,15 @@ Protected Class SystemInfo
 		Shared Function CPUUsage() As Integer
 		  #If TargetWindows Then
 		    Static lastIdleTime, lastKernelTime, lastUserTime As UInt64
-		    Dim idleTime, kernelTime, userTime As UInt64
+		    Var idleTime, kernelTime, userTime As UInt64
 		    
 		    // https://msdn.microsoft.com/en-us/library/windows/desktop/ms724400(v=vs.85).aspx
 		    
 		    Soft Declare Sub GetSystemTimes Lib "Kernel32" (ByRef IdleTime As UInt64, ByRef KernelTime As UInt64, ByRef UserTime As UInt64)
 		    GetSystemTimes(idleTime, kernelTime, userTime)
 		    
-		    Dim user, sys, kernal, idle As UInt64
-		    Dim cpu As Integer
+		    Var user, sys, kernal, idle As UInt64
+		    Var cpu As Integer
 		    
 		    user = userTime - lastUserTime
 		    kernal = kernelTime - lastKernelTime
@@ -46,7 +46,6 @@ Protected Class SystemInfo
 		    lastUserTime = userTime
 		    
 		    Return cpu
-		    
 		  #EndIf
 		End Function
 	#tag EndMethod
@@ -56,22 +55,22 @@ Protected Class SystemInfo
 		  #If TargetWindows Then
 		    // https://msdn.microsoft.com/en-us/library/windows/desktop/dd144876(v=vs.85).aspx
 		    
-		    Soft Declare Function GetDefaultPrinterW Lib "WinSpool.drv" ( buffer As Ptr, ByRef size As Integer ) As Boolean
+		    Soft Declare Function GetDefaultPrinterW Lib "WinSpool.drv" (buffer As Ptr, ByRef size As Integer) As Boolean
 		    Declare Function GetLastError Lib "Kernel32" () As Integer
 		    // Awesome, let's call it to see how much space we need to allocate
 		    Const ERROR_INSUFFICIENT_BUFFER = 122
 		    Const ERROR_FILE_NOT_FOUND = 2
 		    
-		    Dim numCharacters As Integer
+		    Var numCharacters As Integer
 		    Call GetDefaultPrinterW(Nil, numCharacters)
 		    Select Case GetLastError
 		    Case ERROR_INSUFFICIENT_BUFFER
 		      // Now we know how many characters to allocate so we can continue on
-		      Dim buffSize As Integer = 2
+		      Var buffSize As Integer = 2
 		      #If Target64Bit Then
 		        buffSize = 4
 		      #Endif
-		      Dim mb As New MemoryBlock(numCharacters * buffSize)
+		      Var mb As New MemoryBlock(numCharacters * buffSize)
 		      If GetDefaultPrinterW(mb, numCharacters) Then
 		        Return mb.WString(0)
 		      End If
@@ -102,7 +101,7 @@ Protected Class SystemInfo
 		    
 		    Declare Function gethostname Lib "ws2_32" (name As Ptr, size As Integer) As Integer
 		    
-		    Dim mb As New MemoryBlock(256)
+		    Var mb As New MemoryBlock(256)
 		    If gethostname(mb, mb.Size) = 0 Then
 		      Return mb.CString(0)
 		    End
@@ -119,12 +118,12 @@ Protected Class SystemInfo
 		    
 		    Soft Declare Sub GetUserNameW Lib "AdvApi32" (lpBuffer As Ptr, ByRef nSize As Integer)
 		    
-		    Dim mb As New MemoryBlock( 256 )
-		    Dim size As Integer = mb.Size
+		    Var mb As New MemoryBlock(256)
+		    Var size As Integer = mb.Size
 		    
 		    GetUserNameW(mb, size)
 		    
-		    Dim s As String = ConvertEncoding(mb.WString(0), Encodings.UTF8)
+		    Var s As String = ConvertEncoding(mb.WString(0), Encodings.UTF8)
 		    Return s.ToText
 		  #EndIf
 		  
@@ -138,7 +137,7 @@ Protected Class SystemInfo
 		    
 		    Declare Sub GetSystemInfo Lib "Kernel32" (ByRef info As SYSTEM_INFO)
 		    
-		    Dim info As SYSTEM_INFO
+		    Var info As SYSTEM_INFO
 		    GetSystemInfo(info)
 		    
 		    Return info.dwNumberOfProcessors

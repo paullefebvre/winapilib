@@ -1,31 +1,31 @@
-#tag Window
-Begin Window MainWindow
-   BackColor       =   &cFFFFFF00
+#tag DesktopWindow
+Begin DesktopWindow MainWindow
    Backdrop        =   0
-   CloseButton     =   True
+   BackgroundColor =   &cFFFFFF00
    Composite       =   False
-   Frame           =   0
+   DefaultLocation =   0
    FullScreen      =   False
-   FullScreenButton=   False
-   HasBackColor    =   False
+   HasBackgroundColor=   False
+   HasCloseButton  =   True
+   HasFullScreenButton=   False
+   HasMaximizeButton=   True
+   HasMinimizeButton=   True
+   HasTitleBar     =   True
    Height          =   400
    ImplicitInstance=   True
-   LiveResize      =   "True"
    MacProcID       =   0
-   MaxHeight       =   32000
-   MaximizeButton  =   True
-   MaxWidth        =   32000
+   MaximumHeight   =   32000
+   MaximumWidth    =   32000
    MenuBar         =   2093424639
    MenuBarVisible  =   True
-   MinHeight       =   64
-   MinimizeButton  =   True
-   MinWidth        =   64
-   Placement       =   0
+   MinimumHeight   =   64
+   MinimumWidth    =   64
    Resizeable      =   True
    Title           =   "WinAPILib"
+   Type            =   0
    Visible         =   True
    Width           =   600
-   Begin PushButton ScreenCaptureButton
+   Begin DesktopButton ScreenCaptureButton
       AutoDeactivate  =   True
       Bold            =   False
       ButtonStyle     =   0
@@ -57,7 +57,7 @@ Begin Window MainWindow
       Visible         =   True
       Width           =   107
    End
-   Begin Slider OpacitySlider
+   Begin DesktopSlider OpacitySlider
       AutoDeactivate  =   True
       Enabled         =   True
       Height          =   24
@@ -86,11 +86,9 @@ Begin Window MainWindow
       Visible         =   True
       Width           =   100
    End
-   Begin Label Label1
+   Begin DesktopLabel Label1
       AutoDeactivate  =   True
       Bold            =   False
-      DataField       =   ""
-      DataSource      =   ""
       Enabled         =   True
       Height          =   20
       HelpTag         =   ""
@@ -121,11 +119,9 @@ Begin Window MainWindow
       Visible         =   True
       Width           =   100
    End
-   Begin Label CPUUsageLabel
+   Begin DesktopLabel CPUUsageLabel
       AutoDeactivate  =   True
       Bold            =   False
-      DataField       =   ""
-      DataSource      =   ""
       Enabled         =   True
       Height          =   20
       HelpTag         =   ""
@@ -157,6 +153,7 @@ Begin Window MainWindow
       Width           =   201
    End
    Begin Timer CPUUsageTimer
+      Enabled         =   True
       Index           =   -2147483648
       LockedInPosition=   False
       Mode            =   2
@@ -191,7 +188,7 @@ Begin Window MainWindow
       Visible         =   True
       Width           =   250
    End
-   Begin PushButton FlashButton
+   Begin DesktopButton FlashButton
       AutoDeactivate  =   True
       Bold            =   False
       ButtonStyle     =   0
@@ -223,7 +220,7 @@ Begin Window MainWindow
       Visible         =   True
       Width           =   114
    End
-   Begin PushButton TopmostToggleButton
+   Begin DesktopButton TopmostToggleButton
       AutoDeactivate  =   True
       Bold            =   False
       ButtonStyle     =   0
@@ -255,7 +252,7 @@ Begin Window MainWindow
       Visible         =   True
       Width           =   114
    End
-   Begin PushButton SystemInfoButton
+   Begin DesktopButton SystemInfoButton
       AutoDeactivate  =   True
       Bold            =   False
       ButtonStyle     =   0
@@ -287,7 +284,7 @@ Begin Window MainWindow
       Visible         =   True
       Width           =   107
    End
-   Begin PushButton PushButton1
+   Begin DesktopButton OSVersionButton
       AutoDeactivate  =   True
       Bold            =   False
       ButtonStyle     =   0
@@ -319,7 +316,7 @@ Begin Window MainWindow
       Visible         =   True
       Width           =   107
    End
-   Begin PushButton LaunchAndWaitButton
+   Begin DesktopButton LaunchAndWaitButton
       AutoDeactivate  =   True
       Bold            =   False
       ButtonStyle     =   0
@@ -351,7 +348,7 @@ Begin Window MainWindow
       Visible         =   True
       Width           =   168
    End
-   Begin PushButton SelectFolderButton
+   Begin DesktopButton SelectFolderButton
       AutoDeactivate  =   True
       Bold            =   False
       ButtonStyle     =   0
@@ -383,12 +380,10 @@ Begin Window MainWindow
       Visible         =   True
       Width           =   168
    End
-   Begin CheckBox LimitSelectFolderCheckBox
+   Begin DesktopCheckBox LimitSelectFolderCheckBox
       AutoDeactivate  =   True
       Bold            =   False
       Caption         =   "Limit to Favorites"
-      DataField       =   ""
-      DataSource      =   ""
       Enabled         =   True
       Height          =   20
       HelpTag         =   ""
@@ -416,10 +411,10 @@ Begin Window MainWindow
       Visible         =   True
       Width           =   177
    End
-   Begin PushButton slideButton
+   Begin DesktopButton SlideButton
       AutoDeactivate  =   True
       Bold            =   False
-      ButtonStyle     =   "0"
+      ButtonStyle     =   0
       Cancel          =   False
       Caption         =   "Slide"
       Default         =   False
@@ -448,10 +443,10 @@ Begin Window MainWindow
       Visible         =   True
       Width           =   95
    End
-   Begin PushButton collapseButton
+   Begin DesktopButton collapseButton
       AutoDeactivate  =   True
       Bold            =   False
-      ButtonStyle     =   "0"
+      ButtonStyle     =   0
       Cancel          =   False
       Caption         =   "Collapse"
       Default         =   False
@@ -480,10 +475,10 @@ Begin Window MainWindow
       Visible         =   True
       Width           =   95
    End
-   Begin PushButton expandButton
+   Begin DesktopButton ExpandButton
       AutoDeactivate  =   True
       Bold            =   False
-      ButtonStyle     =   "0"
+      ButtonStyle     =   0
       Cancel          =   False
       Caption         =   "Expand"
       Default         =   False
@@ -512,10 +507,10 @@ Begin Window MainWindow
       Visible         =   True
       Width           =   95
    End
-   Begin PushButton fadeButton
+   Begin DesktopButton FadeButton
       AutoDeactivate  =   True
       Bold            =   False
-      ButtonStyle     =   "0"
+      ButtonStyle     =   0
       Cancel          =   False
       Caption         =   "Fade"
       Default         =   False
@@ -544,10 +539,10 @@ Begin Window MainWindow
       Visible         =   True
       Width           =   95
    End
-   Begin PushButton rollButton
+   Begin DesktopButton RollButton
       AutoDeactivate  =   True
       Bold            =   False
-      ButtonStyle     =   "0"
+      ButtonStyle     =   0
       Cancel          =   False
       Caption         =   "Roll"
       Default         =   False
@@ -576,11 +571,9 @@ Begin Window MainWindow
       Visible         =   True
       Width           =   95
    End
-   Begin Label AnimateWindowLabel
+   Begin DesktopLabel AnimateWindowLabel
       AutoDeactivate  =   True
       Bold            =   False
-      DataField       =   ""
-      DataSource      =   ""
       Enabled         =   True
       Height          =   20
       HelpTag         =   ""
@@ -600,7 +593,7 @@ Begin Window MainWindow
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   "AnimateWindow Examples"
-      TextAlign       =   2
+      TextAlign       =   3
       TextColor       =   &c00000000
       TextFont        =   "System"
       TextSize        =   0.0
@@ -611,17 +604,15 @@ Begin Window MainWindow
       Visible         =   True
       Width           =   202
    End
-   Begin TextField animateSpeedTextfield
+   Begin DesktopTextField animateSpeedTextfield
       AcceptTabs      =   False
-      Alignment       =   "3"
+      Alignment       =   3
       AutoDeactivate  =   True
       AutomaticallyCheckSpelling=   False
       BackColor       =   &cFFFFFF00
       Bold            =   False
       Border          =   True
       CueText         =   ""
-      DataField       =   ""
-      DataSource      =   ""
       Enabled         =   True
       Format          =   ""
       Height          =   22
@@ -654,11 +645,9 @@ Begin Window MainWindow
       Visible         =   True
       Width           =   49
    End
-   Begin Label AnimateWindowSpeedLabel
+   Begin DesktopLabel AnimateWindowSpeedLabel
       AutoDeactivate  =   True
       Bold            =   False
-      DataField       =   ""
-      DataSource      =   ""
       Enabled         =   True
       Height          =   20
       HelpTag         =   ""
@@ -690,7 +679,7 @@ Begin Window MainWindow
       Width           =   141
    End
 End
-#tag EndWindow
+#tag EndDesktopWindow
 
 #tag WindowCode
 	#tag Property, Flags = &h0
@@ -702,8 +691,8 @@ End
 
 #tag Events ScreenCaptureButton
 	#tag Event
-		Sub Action()
-		  Dim w As New ScreenCaptureWindow
+		Sub Pressed()
+		  Var w As New ScreenCaptureWindow
 		  w.Show
 		End Sub
 	#tag EndEvent
@@ -711,7 +700,7 @@ End
 #tag Events OpacitySlider
 	#tag Event
 		Sub ValueChanged()
-		  Dim newOpacity As CGFloat = Me.Value / Me.Maximum
+		  Var newOpacity As CGFloat = Me.Value / Me.MaximumValue
 		  
 		  // Don't want to go 100% transparent since the user
 		  // couldn't change the value back! So limit it to 10%.
@@ -726,8 +715,8 @@ End
 #tag Events CPUUsageTimer
 	#tag Event
 		Sub Action()
-		  Dim cpu As Integer = WinAPILib.SystemInfo.CPUUsage
-		  CPUUsageLabel.Text = "CPU Usage: " + cpu.ToText + "%"
+		  Var cpu As Integer = WinAPILib.SystemInfo.CPUUsage
+		  CPUUsageLabel.Text = "CPU Usage: " + cpu.ToString + "%"
 		End Sub
 	#tag EndEvent
 #tag EndEvents
@@ -741,20 +730,20 @@ End
 	#tag EndEvent
 	#tag Event
 		Sub Action()
-		  MsgBox("Action")
+		  MessageBox("Action")
 		End Sub
 	#tag EndEvent
 #tag EndEvents
 #tag Events FlashButton
 	#tag Event
-		Sub Action()
+		Sub Pressed()
 		  WinAPILib.Window.Flash(Self)
 		End Sub
 	#tag EndEvent
 #tag EndEvents
 #tag Events TopmostToggleButton
 	#tag Event
-		Sub Action()
+		Sub Pressed()
 		  WinAPILib.Window.AlwaysTopmost(Self) = Not WinAPILib.Window.AlwaysTopmost(Self)
 		  
 		End Sub
@@ -762,61 +751,61 @@ End
 #tag EndEvents
 #tag Events SystemInfoButton
 	#tag Event
-		Sub Action()
-		  Dim w As New SystemInfoWindow
+		Sub Pressed()
+		  Var w As New SystemInfoWindow
 		  w.Show
 		End Sub
 	#tag EndEvent
 #tag EndEvents
-#tag Events PushButton1
+#tag Events OSVersionButton
 	#tag Event
-		Sub Action()
-		  Dim w As New OSVersionInfoWindow
+		Sub Pressed()
+		  Var w As New OSVersionInfoWindow
 		  w.Show
 		End Sub
 	#tag EndEvent
 #tag EndEvents
 #tag Events LaunchAndWaitButton
 	#tag Event
-		Sub Action()
-		  Dim notepad As FolderItem = SpecialFolder.Windows.Child("Notepad.exe")
+		Sub Pressed()
+		  Var notepad As FolderItem = SpecialFolder.Windows.Child("Notepad.exe")
 		  If notepad.Exists Then
 		    WinAPILib.FileIO.LaunchAndWait(notepad)
-		    MsgBox("Notepad closed.")
+		    MessageBox("Notepad closed.")
 		  End If
 		End Sub
 	#tag EndEvent
 #tag EndEvents
 #tag Events SelectFolderButton
 	#tag Event
-		Sub Action()
-		  dim d as new WinAPILib.SelectFolderDialog
-		  d.PromptText="Find a folder"
-		  if LimitSelectFolderCheckBox.Value then
-		    d.InitialDirectory=WinAPILib.SelectFolderDialog.RootFolders.CSIDL_FAVORITES
-		  end if
-		  dim f as FolderItem=d.ShowModal
+		Sub Pressed()
+		  Var d As New WinAPILib.SelectFolderDialog
+		  d.PromptText = "Find a folder"
+		  If LimitSelectFolderCheckBox.Value Then
+		    d.InitialDirectory = WinAPILib.SelectFolderDialog.RootFolders.CSIDL_FAVORITES
+		  End If
+		  Var f As FolderItem = d.ShowModal
 		  
-		  if f<>nil then MsgBox f.NativePath
+		  If f <> Nil Then MessageBox(f.NativePath)
 		End Sub
 	#tag EndEvent
 #tag EndEvents
-#tag Events slideButton
+#tag Events SlideButton
 	#tag Event
-		Sub Action()
+		Sub Pressed()
 		  #If TargetWindows Then
 		    // SLIDE EXAMPLE
 		    AnimationTestWindow = New Animate_Window
 		    AnimationTestWindow.Title = "Slide Window Example"
 		    
-		    Var animationTimeInt as Integer = animateSpeedTextfield.Text.ToDouble
-		    Var windowHandleInt as Integer = AnimationTestWindow.Handle
-		    Var activateWindowInt as Integer = WinAPILib.AnimateWindow.AW_ACTIVATE
-		    Var slideEffectInt as Integer = WinAPILib.AnimateWindow.AW_HOR_POSITIVE
+		    Var animationTimeInt As Integer = animateSpeedTextfield.Text.ToDouble
+		    Var windowHandleInt As Ptr = AnimationTestWindow.Handle
+		    Var activateWindowInt As Integer = WinAPILib.AnimateWindow.AW_ACTIVATE
+		    Var slideEffectInt As Integer = WinAPILib.AnimateWindow.AW_HOR_POSITIVE
 		    
-		    Var activateInt as Integer = WinAPILib.AnimateWindow.AnimateWindow(windowHandleInt, animationTimeInt, activateWindowInt)
-		    Var resultInt as Integer = WinAPILib.AnimateWindow.AnimateWindow(windowHandleInt, animationTimeInt, slideEffectInt)
-		  #endif
+		    Var activateInt As Integer = WinAPILib.AnimateWindow.AnimateWindow(windowHandleInt, animationTimeInt, activateWindowInt)
+		    Var resultInt As Integer = WinAPILib.AnimateWindow.AnimateWindow(windowHandleInt, animationTimeInt, slideEffectInt)
+		  #EndIf
 		  
 		  
 		End Sub
@@ -824,89 +813,89 @@ End
 #tag EndEvents
 #tag Events collapseButton
 	#tag Event
-		Sub Action()
+		Sub Pressed()
 		  #If TargetWindows Then
 		    // COLLAPSE EXAMPLE
 		    AnimationTestWindow = New Animate_Window
 		    AnimationTestWindow.Title = "Collapse Window Example"
 		    
-		    Var animationTimeInt as Integer = animateSpeedTextfield.Text.ToDouble
-		    Var windowHandleInt as Integer = AnimationTestWindow.Handle
-		    Var activateWindowInt as Integer = WinAPILib.AnimateWindow.AW_ACTIVATE
-		    Var collapseInt as Integer = WinAPILib.AnimateWindow.AW_HIDE
+		    Var animationTimeInt As Integer = animateSpeedTextfield.Text.ToDouble
+		    Var windowHandleInt As Ptr = AnimationTestWindow.Handle
+		    Var activateWindowInt As Integer = WinAPILib.AnimateWindow.AW_ACTIVATE
+		    Var collapseInt As Integer = WinAPILib.AnimateWindow.AW_HIDE
 		    
-		    Var activateInt as Integer = WinAPILib.AnimateWindow.AnimateWindow(windowHandleInt, animationTimeInt, activateWindowInt)
-		    Var resultInt as Integer = WinAPILib.AnimateWindow.AnimateWindow(windowHandleInt, animationTimeInt, collapseInt)
-		  #endif
+		    Var activateInt As Integer = WinAPILib.AnimateWindow.AnimateWindow(windowHandleInt, animationTimeInt, activateWindowInt)
+		    Var resultInt As Integer = WinAPILib.AnimateWindow.AnimateWindow(windowHandleInt, animationTimeInt, collapseInt)
+		  #EndIf
 		  
 		End Sub
 	#tag EndEvent
 #tag EndEvents
-#tag Events expandButton
+#tag Events ExpandButton
 	#tag Event
-		Sub Action()
+		Sub Pressed()
 		  #If TargetWindows Then
 		    // EXPAND EXAMPLE
 		    AnimationTestWindow = New Animate_Window
 		    AnimationTestWindow.Title = "Expand Window Example"
 		    
-		    Var animationTimeInt as Integer = animateSpeedTextfield.Text.ToDouble
-		    Var windowHandleInt as Integer = AnimationTestWindow.Handle
-		    Var activateWindowInt as Integer = WinAPILib.AnimateWindow.AW_ACTIVATE
-		    Var expandEffectInt as Integer = WinAPILib.AnimateWindow.AW_CENTER
+		    Var animationTimeInt As Integer = animateSpeedTextfield.Text.ToDouble
+		    Var windowHandleInt As Ptr = AnimationTestWindow.Handle
+		    Var activateWindowInt As Integer = WinAPILib.AnimateWindow.AW_ACTIVATE
+		    Var expandEffectInt As Integer = WinAPILib.AnimateWindow.AW_CENTER
 		    
-		    Var activateInt as Integer = WinAPILib.AnimateWindow.AnimateWindow(windowHandleInt, animationTimeInt, activateWindowInt)
-		    Var resultInt as Integer = WinAPILib.AnimateWindow.AnimateWindow(windowHandleInt, animationTimeInt, expandEffectInt)
-		  #endif
+		    Var activateInt As Integer = WinAPILib.AnimateWindow.AnimateWindow(windowHandleInt, animationTimeInt, activateWindowInt)
+		    Var resultInt As Integer = WinAPILib.AnimateWindow.AnimateWindow(windowHandleInt, animationTimeInt, expandEffectInt)
+		  #EndIf
 		  
 		  
 		End Sub
 	#tag EndEvent
 #tag EndEvents
-#tag Events fadeButton
+#tag Events FadeButton
 	#tag Event
-		Sub Action()
+		Sub Pressed()
 		  #If TargetWindows Then
 		    // FADE EXAMPLE
 		    AnimationTestWindow = New Animate_Window
 		    AnimationTestWindow.Title = "Fade Window Example"
 		    
-		    Var animationTimeInt as Integer = animateSpeedTextfield.Text.ToDouble
-		    Var windowHandleInt as Integer = AnimationTestWindow.Handle
-		    Var activateWindowInt as Integer = WinAPILib.AnimateWindow.AW_ACTIVATE
-		    Var fadeEffectInt as Integer = WinAPILib.AnimateWindow.AW_BLEND
+		    Var animationTimeInt As Integer = animateSpeedTextfield.Text.ToDouble
+		    Var windowHandleInt As Ptr = AnimationTestWindow.Handle
+		    Var activateWindowInt As Integer = WinAPILib.AnimateWindow.AW_ACTIVATE
+		    Var fadeEffectInt As Integer = WinAPILib.AnimateWindow.AW_BLEND
 		    
-		    Var activateInt as Integer = WinAPILib.AnimateWindow.AnimateWindow(windowHandleInt, animationTimeInt, activateWindowInt)
-		    Var resultInt as Integer = WinAPILib.AnimateWindow.AnimateWindow(windowHandleInt, animationTimeInt, fadeEffectInt)
-		  #endif
+		    Var activateInt As Integer = WinAPILib.AnimateWindow.AnimateWindow(windowHandleInt, animationTimeInt, activateWindowInt)
+		    Var resultInt As Integer = WinAPILib.AnimateWindow.AnimateWindow(windowHandleInt, animationTimeInt, fadeEffectInt)
+		  #EndIf
 		  
 		  
 		End Sub
 	#tag EndEvent
 #tag EndEvents
-#tag Events rollButton
+#tag Events RollButton
 	#tag Event
-		Sub Action()
+		Sub Pressed()
 		  #If TargetWindows Then
 		    // ROLL EXAMPLE
 		    AnimationTestWindow = New Animate_Window
 		    AnimationTestWindow.Title = "Roll Window Example"
 		    
-		    Var animationTimeInt as Integer = animateSpeedTextfield.Text.ToDouble
-		    Var windowHandleInt as Integer = AnimationTestWindow.Handle
-		    Var activateWindowInt as Integer = WinAPILib.AnimateWindow.AW_ACTIVATE
-		    Var rollEffectInt as Integer = WinAPILib.AnimateWindow.AW_HOR_NEGATIVE
+		    Var animationTimeInt As Integer = animateSpeedTextfield.Text.ToDouble
+		    Var windowHandleInt As Ptr = AnimationTestWindow.Handle
+		    Var activateWindowInt As Integer = WinAPILib.AnimateWindow.AW_ACTIVATE
+		    Var rollEffectInt As Integer = WinAPILib.AnimateWindow.AW_HOR_NEGATIVE
 		    
-		    Var activateInt as Integer = WinAPILib.AnimateWindow.AnimateWindow(windowHandleInt, animationTimeInt, activateWindowInt)
-		    Var resultInt as Integer = WinAPILib.AnimateWindow.AnimateWindow(windowHandleInt, animationTimeInt, rollEffectInt)
-		  #endif
+		    Var activateInt As Integer = WinAPILib.AnimateWindow.AnimateWindow(windowHandleInt, animationTimeInt, activateWindowInt)
+		    Var resultInt As Integer = WinAPILib.AnimateWindow.AnimateWindow(windowHandleInt, animationTimeInt, rollEffectInt)
+		  #EndIf
 		  
 		End Sub
 	#tag EndEvent
 #tag EndEvents
 #tag Events animateSpeedTextfield
 	#tag Event
-		Function KeyDown(Key As String) As Boolean
+		Function KeyDown(key As String) As Boolean
 		  // ONLY ALLOW DIGITS
 		  Select Case Asc(Key)
 		  Case 8

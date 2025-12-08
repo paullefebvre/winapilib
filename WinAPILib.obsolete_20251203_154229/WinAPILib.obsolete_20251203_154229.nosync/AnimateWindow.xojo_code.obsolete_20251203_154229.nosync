@@ -1,16 +1,15 @@
 #tag Class
 Protected Class AnimateWindow
 	#tag Method, Flags = &h0
-		Shared Function AnimateWindow(windowHwndInt as Integer, pTimeMsInt as Integer, animationType as Integer) As integer
+		Shared Function AnimateWindow(windowHwndInt as Ptr, pTimeMsInt as Integer, animationType as Integer) As integer
 		  #If TargetWindows Then
-		    
 		    // Enables you to produce special effects when showing or hiding windows
 		    // There are four types of animation: roll, slide, collapse or expand, and alpha-blended fade.
 		    // https://docs.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-animatewindow
 		    
-		    Declare Function AnimateWindow Lib "User32.dll" (windowHwndInt As Integer, pTimeMsInt As Integer, animationType as Integer ) As Integer
+		    Declare Function AnimateWindow Lib "User32.dll" (windowHwndInt As Ptr, pTimeMsInt As Integer, animationType as Integer) As Integer
 		    
-		    Return AnimateWindow( windowHwndInt, pTimeMsInt, animationType)
+		    Return AnimateWindow(windowHwndInt, pTimeMsInt, animationType)
 		  #Endif
 		End Function
 	#tag EndMethod

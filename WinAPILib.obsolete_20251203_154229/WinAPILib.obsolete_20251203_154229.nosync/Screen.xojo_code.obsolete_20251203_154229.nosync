@@ -14,10 +14,10 @@ Protected Class Screen
 		    Const SRCCOPY = &h00CC0020
 		    Const CAPTUREBLT = &h40000000
 		    
-		    Dim screenCap As Picture = New Picture(width, height, 24)
-		    Dim HWND As Integer = GetDesktopWindow()
-		    Dim sourceDC As Integer = GetDC(HWND)
-		    Dim destDC As Integer = screenCap.Graphics.Handle(screenCap.Graphics.HandleTypeHDC)
+		    Var screenCap As Picture = New Picture(width, height, 24)
+		    Var HWND As Integer = GetDesktopWindow()
+		    Var sourceDC As Integer = GetDC(HWND)
+		    Var destDC As Integer = screenCap.Graphics.Handle(screenCap.Graphics.HandleTypeHDC)
 		    Call BitBlt(destDC, 0, 0, width, height, sourceDC, X, Y, SRCCOPY Or CAPTUREBLT)
 		    Call ReleaseDC(HWND, sourceDC)
 		    Return screenCap
@@ -34,6 +34,7 @@ Protected Class Screen
 			Group="ID"
 			InitialValue="-2147483648"
 			Type="Integer"
+			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="Left"
@@ -41,18 +42,23 @@ Protected Class Screen
 			Group="Position"
 			InitialValue="0"
 			Type="Integer"
+			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="Name"
 			Visible=true
 			Group="ID"
+			InitialValue=""
 			Type="String"
+			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="Super"
 			Visible=true
 			Group="ID"
+			InitialValue=""
 			Type="String"
+			EditorType=""
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="Top"
@@ -60,6 +66,7 @@ Protected Class Screen
 			Group="Position"
 			InitialValue="0"
 			Type="Integer"
+			EditorType=""
 		#tag EndViewProperty
 	#tag EndViewBehavior
 End Class

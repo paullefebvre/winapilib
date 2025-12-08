@@ -1,31 +1,31 @@
-#tag Window
-Begin Window SystemInfoWindow
-   BackColor       =   &cFFFFFF00
+#tag DesktopWindow
+Begin DesktopWindow SystemInfoWindow
    Backdrop        =   0
-   CloseButton     =   True
+   BackgroundColor =   &cFFFFFF00
    Composite       =   False
-   Frame           =   0
+   DefaultLocation =   0
    FullScreen      =   False
-   FullScreenButton=   False
-   HasBackColor    =   False
+   HasBackgroundColor=   False
+   HasCloseButton  =   True
+   HasFullScreenButton=   False
+   HasMaximizeButton=   True
+   HasMinimizeButton=   True
+   HasTitleBar     =   True
    Height          =   400
    ImplicitInstance=   False
-   LiveResize      =   "True"
    MacProcID       =   0
-   MaxHeight       =   32000
-   MaximizeButton  =   True
-   MaxWidth        =   32000
+   MaximumHeight   =   32000
+   MaximumWidth    =   32000
    MenuBar         =   0
    MenuBarVisible  =   True
-   MinHeight       =   64
-   MinimizeButton  =   True
-   MinWidth        =   64
-   Placement       =   0
+   MinimumHeight   =   64
+   MinimumWidth    =   64
    Resizeable      =   True
    Title           =   "System Information"
+   Type            =   0
    Visible         =   True
    Width           =   350
-   Begin Listbox SystemList
+   Begin DesktopListBox SystemList
       AutoDeactivate  =   True
       AutoHideScrollbars=   True
       Bold            =   False
@@ -33,14 +33,11 @@ Begin Window SystemInfoWindow
       ColumnCount     =   2
       ColumnsResizable=   False
       ColumnWidths    =   ""
-      DataField       =   ""
-      DataSource      =   ""
       DefaultRowHeight=   -1
       Enabled         =   True
       EnableDrag      =   False
       EnableDragReorder=   False
-      GridLinesHorizontal=   0
-      GridLinesVertical=   0
+      GridLineStyle   =   0
       HasHeading      =   False
       HeadingIndex    =   -1
       Height          =   360
@@ -78,18 +75,18 @@ Begin Window SystemInfoWindow
       _ScrollWidth    =   -1
    End
 End
-#tag EndWindow
+#tag EndDesktopWindow
 
 #tag WindowCode
 	#tag Event
-		Sub Open()
+		Sub Opening() Handles Opening
 		  SystemList.AddRow("ComputerName", WinAPILib.SystemInfo.ComputerName)
 		  'SystemList.AddRow("CPUUsage", Str(WinAPI.SystemInfo.CPUUsage))
 		  SystemList.AddRow("DefaultPrinter", WinAPILib.SystemInfo.DefaultPrinter)
-		  SystemList.AddRow("DoubleClickTime", WinAPILib.SystemInfo.DoubleClickTime.ToText)
+		  SystemList.AddRow("DoubleClickTime", WinAPILib.SystemInfo.DoubleClickTime.ToString)
 		  SystemList.AddRow("LoggedInUserName", WinAPILib.SystemInfo.LoggedInUserName)
-		  SystemList.AddRow("NumberOfProcessors", WinAPILib.SystemInfo.NumberOfProcessors.ToText)
-		  SystemList.AddRow("ProcessID", WinAPILib.SystemInfo.ProcessID.ToText)
+		  SystemList.AddRow("NumberOfProcessors", WinAPILib.SystemInfo.NumberOfProcessors.ToString)
+		  SystemList.AddRow("ProcessID", WinAPILib.SystemInfo.ProcessID.ToString)
 		  SystemList.AddRow("HostName", WinAPILib.SystemInfo.HostName)
 		End Sub
 	#tag EndEvent

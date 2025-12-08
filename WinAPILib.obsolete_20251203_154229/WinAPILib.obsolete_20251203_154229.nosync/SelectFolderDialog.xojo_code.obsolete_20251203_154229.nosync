@@ -2,35 +2,35 @@
 Protected Class SelectFolderDialog
 	#tag Method, Flags = &h0
 		Shared Function SelectFolder(title as string, root as WinApiLib.SelectFolderDialog.RootFolders=WinApiLib.SelectFolderDialog.RootFolders.CSIDL_DESKTOP, flags as Integer=0) As FolderItem
-		  #if TargetWindows
-		    declare Function SHBrowseForFolderA lib "Shell32"(byref info as BROWSEINFOA) as ptr
-		    declare Function SHGetPathFromIDListA lib "Shell32"(list as ptr,path as ptr) as Boolean
+		  #If TargetWindows
+		    Declare Function SHBrowseForFolderA Lib "Shell32"(ByRef info As BROWSEINFOA) As Ptr
+		    Declare Function SHGetPathFromIDListA Lib "Shell32"(list As Ptr, path As Ptr) As Boolean
 		    
-		    dim info as BROWSEINFOA
-		    info.title=title
-		    Var rootEnumInt as uInt32 = CType(root, uInt32)
-		    info.root=rootEnumInt
-		    info.Flags=Flags
-		    dim displayNameMB as new MemoryBlock(260)
-		    dim pathMB as new MemoryBlock(260)
-		    info.displayName=displayNameMB
-		    dim idList as ptr=SHBrowseForFolderA(info)
-		    if idList<>nil then 
-		      if SHGetPathFromIDListA(idList,pathMB) then
-		        dim path as CString=pathMB.CString(0)
-		        dim f as new FolderItem(path,FolderItem.PathTypeNative)
+		    Var info As BROWSEINFOA
+		    info.title = title
+		    Var rootEnumInt As UInt32 = CType(root, UInt32)
+		    info.root = rootEnumInt
+		    info.Flags = Flags
+		    Var displayNameMB As New MemoryBlock(260)
+		    Var pathMB As New MemoryBlock(260)
+		    info.displayName = displayNameMB
+		    Var idList As Ptr = SHBrowseForFolderA(info)
+		    If idList <> Nil Then 
+		      If SHGetPathFromIDListA(idList, pathMB) Then
+		        Var path As CString = pathMB.CString(0)
+		        Var f As New FolderItem(path, FolderItem.PathTypeNative)
 		        Return f
-		      end if
-		    end if
-		  #endif
+		      End If
+		    End If
+		  #EndIf
 		End Function
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
 		Function ShowModal() As FolderItem
-		  dim flags as integer
-		  if ShowEditBox then flags=kBIF_EDITBOX
-		  result=SelectFolder(PromptText,InitialDirectory,Flags)
+		  Var flags As Integer
+		  If ShowEditBox Then flags = kBIF_EDITBOX
+		  result=SelectFolder(PromptText, InitialDirectory, flags)
 		  Return Result
 		End Function
 	#tag EndMethod
@@ -176,7 +176,7 @@ Protected Class SelectFolderDialog
 			Group="Behavior"
 			InitialValue=""
 			Type="String"
-			EditorType=""
+			EditorType="MultiLineEditor"
 		#tag EndViewProperty
 		#tag ViewProperty
 			Name="ShowEditBox"

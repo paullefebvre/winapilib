@@ -1,31 +1,31 @@
-#tag Window
-Begin Window ScreenCaptureWindow
-   BackColor       =   &cFFFFFF00
+#tag DesktopWindow
+Begin DesktopWindow ScreenCaptureWindow
    Backdrop        =   0
-   CloseButton     =   True
+   BackgroundColor =   &cFFFFFF00
    Composite       =   False
-   Frame           =   0
+   DefaultLocation =   0
    FullScreen      =   False
-   FullScreenButton=   False
-   HasBackColor    =   False
+   HasBackgroundColor=   False
+   HasCloseButton  =   True
+   HasFullScreenButton=   False
+   HasMaximizeButton=   True
+   HasMinimizeButton=   True
+   HasTitleBar     =   True
    Height          =   206
    ImplicitInstance=   False
-   LiveResize      =   "True"
    MacProcID       =   0
-   MaxHeight       =   32000
-   MaximizeButton  =   True
-   MaxWidth        =   32000
+   MaximumHeight   =   32000
+   MaximumWidth    =   32000
    MenuBar         =   0
    MenuBarVisible  =   True
-   MinHeight       =   64
-   MinimizeButton  =   True
-   MinWidth        =   64
-   Placement       =   0
+   MinimumHeight   =   64
+   MinimumWidth    =   64
    Resizeable      =   False
    Title           =   "Screen Capture"
+   Type            =   0
    Visible         =   True
    Width           =   194
-   Begin PushButton PushButton1
+   Begin DesktopButton PushButton1
       AutoDeactivate  =   True
       Bold            =   False
       ButtonStyle     =   0
@@ -57,12 +57,11 @@ Begin Window ScreenCaptureWindow
       Visible         =   True
       Width           =   154
    End
-   Begin Canvas Canvas1
+   Begin DesktopCanvas Canvas1
       AcceptFocus     =   False
       AcceptTabs      =   False
       AutoDeactivate  =   True
       Backdrop        =   0
-      DoubleBuffer    =   False
       Enabled         =   True
       Height          =   100
       HelpTag         =   ""
@@ -85,7 +84,7 @@ Begin Window ScreenCaptureWindow
       Width           =   100
    End
 End
-#tag EndWindow
+#tag EndDesktopWindow
 
 #tag WindowCode
 	#tag Property, Flags = &h21
@@ -97,15 +96,15 @@ End
 
 #tag Events PushButton1
 	#tag Event
-		Sub Action()
+		Sub Pressed()
 		  CapturePic = WinAPILib.Screen.CaptureRect(0, 0, 100, 100)
-		  Canvas1.Invalidate(False)
+		  Canvas1.Refresh(False)
 		End Sub
 	#tag EndEvent
 #tag EndEvents
 #tag Events Canvas1
 	#tag Event
-		Sub Paint(g As Graphics, areas() As REALbasic.Rect)
+		Sub Paint(g As Graphics, areas() As Rect)
 		  If CapturePic <> Nil Then
 		    g.DrawPicture(CapturePic, 0, 0)
 		  End If
